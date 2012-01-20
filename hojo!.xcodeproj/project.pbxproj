@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		730868EB14C9BAE2004E8224 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730868EA14C9BAE2004E8224 /* UIKit.framework */; };
+		730868ED14C9BAE2004E8224 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730868EC14C9BAE2004E8224 /* Foundation.framework */; };
+		730868EF14C9BAE2004E8224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730868EE14C9BAE2004E8224 /* CoreGraphics.framework */; };
+		730868F514C9BAE2004E8224 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 730868F314C9BAE2004E8224 /* InfoPlist.strings */; };
+		730868F714C9BAE2004E8224 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 730868F614C9BAE2004E8224 /* main.m */; };
+		730868FB14C9BAE2004E8224 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 730868FA14C9BAE2004E8224 /* AppDelegate.m */; };
+		730868FE14C9BAE2004E8224 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 730868FC14C9BAE2004E8224 /* MainStoryboard.storyboard */; };
+		7308690114C9BAE2004E8224 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308690014C9BAE2004E8224 /* FirstViewController.m */; };
+		7308690314C9BAE3004E8224 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308690214C9BAE3004E8224 /* first.png */; };
+		7308690514C9BAE3004E8224 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308690414C9BAE3004E8224 /* first@2x.png */; };
+		7308690814C9BAE3004E8224 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308690714C9BAE3004E8224 /* SecondViewController.m */; };
+		7308690A14C9BAE3004E8224 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308690914C9BAE3004E8224 /* second.png */; };
+		7308690C14C9BAE3004E8224 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308690B14C9BAE3004E8224 /* second@2x.png */; };
+		7308691414C9BAE3004E8224 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7308691314C9BAE3004E8224 /* SenTestingKit.framework */; };
+		7308691514C9BAE3004E8224 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730868EA14C9BAE2004E8224 /* UIKit.framework */; };
+		7308691614C9BAE3004E8224 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 730868EC14C9BAE2004E8224 /* Foundation.framework */; };
+		7308691E14C9BAE3004E8224 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7308691C14C9BAE3004E8224 /* InfoPlist.strings */; };
+		7308692114C9BAE3004E8224 /* hojo_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7308692014C9BAE3004E8224 /* hojo_Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7308691714C9BAE3004E8224 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 730868DD14C9BAE2004E8224 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 730868E514C9BAE2004E8224;
+			remoteInfo = "hojo!";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		730868E614C9BAE2004E8224 /* hojo!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hojo!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730868EA14C9BAE2004E8224 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		730868EC14C9BAE2004E8224 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		730868EE14C9BAE2004E8224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		730868F214C9BAE2004E8224 /* hojo!-Info.plist */ = {isa = PBXFileReference; path = "hojo!-Info.plist"; sourceTree = "<group>"; };
+		730868F414C9BAE2004E8224 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		730868F614C9BAE2004E8224 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		730868F814C9BAE2004E8224 /* hojo!-Prefix.pch */ = {isa = PBXFileReference; path = "hojo!-Prefix.pch"; sourceTree = "<group>"; };
+		730868F914C9BAE2004E8224 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		730868FA14C9BAE2004E8224 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		730868FD14C9BAE2004E8224 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		730868FF14C9BAE2004E8224 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		7308690014C9BAE2004E8224 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		7308690214C9BAE3004E8224 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		7308690414C9BAE3004E8224 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		7308690614C9BAE3004E8224 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		7308690714C9BAE3004E8224 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		7308690914C9BAE3004E8224 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		7308690B14C9BAE3004E8224 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		7308691214C9BAE3004E8224 /* hojo!Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hojo!Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7308691314C9BAE3004E8224 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7308691B14C9BAE3004E8224 /* hojo!Tests-Info.plist */ = {isa = PBXFileReference; path = "hojo!Tests-Info.plist"; sourceTree = "<group>"; };
+		7308691D14C9BAE3004E8224 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7308691F14C9BAE3004E8224 /* hojo_Tests.h */ = {isa = PBXFileReference; path = hojo_Tests.h; sourceTree = "<group>"; };
+		7308692014C9BAE3004E8224 /* hojo_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hojo_Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		730868E314C9BAE2004E8224 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				730868EB14C9BAE2004E8224 /* UIKit.framework in Frameworks */,
+				730868ED14C9BAE2004E8224 /* Foundation.framework in Frameworks */,
+				730868EF14C9BAE2004E8224 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7308690E14C9BAE3004E8224 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7308691414C9BAE3004E8224 /* SenTestingKit.framework in Frameworks */,
+				7308691514C9BAE3004E8224 /* UIKit.framework in Frameworks */,
+				7308691614C9BAE3004E8224 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		730868DB14C9BAE2004E8224 = {
+			isa = PBXGroup;
+			children = (
+				730868F014C9BAE2004E8224 /* hojo! */,
+				7308691914C9BAE3004E8224 /* hojo!Tests */,
+				730868E914C9BAE2004E8224 /* Frameworks */,
+				730868E714C9BAE2004E8224 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		730868E714C9BAE2004E8224 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				730868E614C9BAE2004E8224 /* hojo!.app */,
+				7308691214C9BAE3004E8224 /* hojo!Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		730868E914C9BAE2004E8224 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				730868EA14C9BAE2004E8224 /* UIKit.framework */,
+				730868EC14C9BAE2004E8224 /* Foundation.framework */,
+				730868EE14C9BAE2004E8224 /* CoreGraphics.framework */,
+				7308691314C9BAE3004E8224 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		730868F014C9BAE2004E8224 /* hojo! */ = {
+			isa = PBXGroup;
+			children = (
+				730868F914C9BAE2004E8224 /* AppDelegate.h */,
+				730868FA14C9BAE2004E8224 /* AppDelegate.m */,
+				730868FC14C9BAE2004E8224 /* MainStoryboard.storyboard */,
+				730868FF14C9BAE2004E8224 /* FirstViewController.h */,
+				7308690014C9BAE2004E8224 /* FirstViewController.m */,
+				7308690214C9BAE3004E8224 /* first.png */,
+				7308690414C9BAE3004E8224 /* first@2x.png */,
+				7308690614C9BAE3004E8224 /* SecondViewController.h */,
+				7308690714C9BAE3004E8224 /* SecondViewController.m */,
+				7308690914C9BAE3004E8224 /* second.png */,
+				7308690B14C9BAE3004E8224 /* second@2x.png */,
+				730868F114C9BAE2004E8224 /* Supporting Files */,
+			);
+			path = "hojo!";
+			sourceTree = "<group>";
+		};
+		730868F114C9BAE2004E8224 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				730868F214C9BAE2004E8224 /* hojo!-Info.plist */,
+				730868F314C9BAE2004E8224 /* InfoPlist.strings */,
+				730868F614C9BAE2004E8224 /* main.m */,
+				730868F814C9BAE2004E8224 /* hojo!-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7308691914C9BAE3004E8224 /* hojo!Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7308691F14C9BAE3004E8224 /* hojo_Tests.h */,
+				7308692014C9BAE3004E8224 /* hojo_Tests.m */,
+				7308691A14C9BAE3004E8224 /* Supporting Files */,
+			);
+			path = "hojo!Tests";
+			sourceTree = "<group>";
+		};
+		7308691A14C9BAE3004E8224 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7308691B14C9BAE3004E8224 /* hojo!Tests-Info.plist */,
+				7308691C14C9BAE3004E8224 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		730868E514C9BAE2004E8224 /* hojo! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7308692414C9BAE3004E8224 /* Build configuration list for PBXNativeTarget "hojo!" */;
+			buildPhases = (
+				730868E214C9BAE2004E8224 /* Sources */,
+				730868E314C9BAE2004E8224 /* Frameworks */,
+				730868E414C9BAE2004E8224 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hojo!";
+			productName = "hojo!";
+			productReference = 730868E614C9BAE2004E8224 /* hojo!.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7308691114C9BAE3004E8224 /* hojo!Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7308692714C9BAE3004E8224 /* Build configuration list for PBXNativeTarget "hojo!Tests" */;
+			buildPhases = (
+				7308690D14C9BAE3004E8224 /* Sources */,
+				7308690E14C9BAE3004E8224 /* Frameworks */,
+				7308690F14C9BAE3004E8224 /* Resources */,
+				7308691014C9BAE3004E8224 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7308691814C9BAE3004E8224 /* PBXTargetDependency */,
+			);
+			name = "hojo!Tests";
+			productName = "hojo!Tests";
+			productReference = 7308691214C9BAE3004E8224 /* hojo!Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		730868DD14C9BAE2004E8224 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "香川高専高松キャンパス";
+			};
+			buildConfigurationList = 730868E014C9BAE2004E8224 /* Build configuration list for PBXProject "hojo!" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 730868DB14C9BAE2004E8224;
+			productRefGroup = 730868E714C9BAE2004E8224 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				730868E514C9BAE2004E8224 /* hojo! */,
+				7308691114C9BAE3004E8224 /* hojo!Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		730868E414C9BAE2004E8224 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				730868F514C9BAE2004E8224 /* InfoPlist.strings in Resources */,
+				730868FE14C9BAE2004E8224 /* MainStoryboard.storyboard in Resources */,
+				7308690314C9BAE3004E8224 /* first.png in Resources */,
+				7308690514C9BAE3004E8224 /* first@2x.png in Resources */,
+				7308690A14C9BAE3004E8224 /* second.png in Resources */,
+				7308690C14C9BAE3004E8224 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7308690F14C9BAE3004E8224 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7308691E14C9BAE3004E8224 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7308691014C9BAE3004E8224 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		730868E214C9BAE2004E8224 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				730868F714C9BAE2004E8224 /* main.m in Sources */,
+				730868FB14C9BAE2004E8224 /* AppDelegate.m in Sources */,
+				7308690114C9BAE2004E8224 /* FirstViewController.m in Sources */,
+				7308690814C9BAE3004E8224 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7308690D14C9BAE3004E8224 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7308692114C9BAE3004E8224 /* hojo_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7308691814C9BAE3004E8224 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 730868E514C9BAE2004E8224 /* hojo! */;
+			targetProxy = 7308691714C9BAE3004E8224 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		730868F314C9BAE2004E8224 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				730868F414C9BAE2004E8224 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		730868FC14C9BAE2004E8224 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				730868FD14C9BAE2004E8224 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		7308691C14C9BAE3004E8224 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7308691D14C9BAE3004E8224 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7308692214C9BAE3004E8224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7308692314C9BAE3004E8224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7308692514C9BAE3004E8224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
+				INFOPLIST_FILE = "hojo!/hojo!-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7308692614C9BAE3004E8224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
+				INFOPLIST_FILE = "hojo!/hojo!-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7308692814C9BAE3004E8224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hojo!.app/hojo!";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
+				INFOPLIST_FILE = "hojo!Tests/hojo!Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7308692914C9BAE3004E8224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hojo!.app/hojo!";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
+				INFOPLIST_FILE = "hojo!Tests/hojo!Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		730868E014C9BAE2004E8224 /* Build configuration list for PBXProject "hojo!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7308692214C9BAE3004E8224 /* Debug */,
+				7308692314C9BAE3004E8224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7308692414C9BAE3004E8224 /* Build configuration list for PBXNativeTarget "hojo!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7308692514C9BAE3004E8224 /* Debug */,
+				7308692614C9BAE3004E8224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7308692714C9BAE3004E8224 /* Build configuration list for PBXNativeTarget "hojo!Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7308692814C9BAE3004E8224 /* Debug */,
+				7308692914C9BAE3004E8224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 730868DD14C9BAE2004E8224 /* Project object */;
+}
