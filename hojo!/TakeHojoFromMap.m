@@ -1,44 +1,41 @@
 //
-//  SecondViewController.m
-//  tabBarTest
+//  TakeHojoFromMap.m
+//  hojo!
 //
-//  Created by slamet kristanto on 1/4/12.
+//  Created by slamet kristanto on 1/20/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TakeHojoFromMap.h"
 #import "AppDelegate.h"
 #import "MyAnnotation.h"
+#import "EditViewController.h"
 
-@implementation SecondViewController
-@synthesize myMapView,toolBar;
-@synthesize editMap;
+@implementation TakeHojoFromMap
+@synthesize myMapView;
+@synthesize editMap,selectedHojo;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
         self.title = NSLocalizedString(@"圃場マップ", @"圃場マップ");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
     }
     return self;
 }
 
 - (void)didReceiveMemoryWarning
 {
+    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
+    
     // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
-- (void) changeMapType: (id)sender
-{
-    if (myMapView.mapType == MKMapTypeStandard)
-        myMapView.mapType = MKMapTypeSatellite;
-    else
-        myMapView.mapType = MKMapTypeStandard;
-} 
 
 - (void)mapView:(MKMapView *)mapView 
 didUpdateUserLocation:
@@ -52,7 +49,7 @@ didUpdateUserLocation:
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.];
-  
+    
     myMapView.delegate = self;
     
     myMapView.showsUserLocation = YES;
@@ -61,19 +58,8 @@ didUpdateUserLocation:
     MKCoordinateRegionMakeWithDistance (
                                         userLocation.location.coordinate, 500, 500);
     [myMapView setRegion:region animated
-    :NO];
+                        :NO];
     
-    UIBarButtonItem *typeButton = 
-    [[UIBarButtonItem alloc]
-     initWithTitle: @"Type"
-     style:UIBarButtonItemStyleBordered
-     target: self
-     action:@selector(changeMapType:)];
-    
-    NSArray *buttons = [[NSArray alloc] 
-                        initWithObjects:typeButton, nil];
-    
-    toolBar.items = buttons;
     NSMutableArray* annotations=[[NSMutableArray alloc] init];
     
     CLLocationCoordinate2D theCoordinate1;
@@ -127,49 +113,6 @@ didUpdateUserLocation:
     [annotations addObject:myAnnotation4];
     
 }
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-    
-}
-
-
-
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
-#pragma mark MKMapViewDelegate
-/*
- - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
- {
- return [kml viewForOverlay:overlay];
- }
- */
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
 	NSLog(@"welcome into the map view annotation");
@@ -181,21 +124,40 @@ didUpdateUserLocation:
 	// try to dequeue an existing pin view first
 	static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
 	MKPinAnnotationView* pinView = [[MKPinAnnotationView alloc]
-									 initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+                                    initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
 	pinView.animatesDrop=YES;
 	pinView.canShowCallout=YES;
 	pinView.pinColor=MKPinAnnotationColorGreen;
 	
 	
-	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	[rightButton setTitle:annotation.title forState:UIControlStateNormal];
-	[rightButton addTarget:self
-					action:@selector(showDetails:)
+	//UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    UIButton* addButton=[UIButton buttonWithType:UIButtonTypeContactAdd];
+	[addButton setTitle:annotation.title forState:UIControlStateNormal];
+	[addButton addTarget:self
+					action:@selector(addHojo:)
 		  forControlEvents:UIControlEventTouchUpInside];
-	pinView.rightCalloutAccessoryView = rightButton;
+	pinView.rightCalloutAccessoryView = addButton;
 	
 	
 	return pinView;
+}
+-(IBAction)addHojo:(id)sender{
+    selectedHojo=((UIButton*)sender).currentTitle;
+    [delegate didReceiveWorkPlace:selectedHojo];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end

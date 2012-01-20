@@ -2,18 +2,53 @@
 //  AppDelegate.m
 //  hojo!
 //
-//  Created by slamet kristanto on 1/21/12.
+//  Created by slamet kristanto on 1/12/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "Player.h"
+#import "DiaryViewController.h"
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSMutableArray *players;
+}
 
 @synthesize window = _window;
+@synthesize workData;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    workData=[[NSString alloc]initWithString:@"種まき"];
+    players =[NSMutableArray arrayWithCapacity:20];
+    Player *player =[[Player alloc] init];
+    player.workName=@"種まき";
+    player.crop=@"キャベツ";
+    player.hojo=@"圃場A";
+    player.startTime=@"08:30";
+    player.finishTime=@"09:30";
+    [players addObject:player];
+    player=[[Player alloc] init];
+    player.workName=@"収穫";
+    player.crop=@"タマネギ";
+    player.hojo=@"圃場B";
+    player.startTime=@"09:30";
+    player.finishTime=@"10:30";
+    [players addObject:player];
+    player=[[Player alloc] init];
+    player.workName=@"水やり";
+    player.crop=@"レタス";
+    player.hojo=@"圃場A";
+    player.startTime=@"10:30";
+    player.finishTime=@"11:30";
+    [players addObject:player];
+    UITabBarController *tabBarController = 
+    (UITabBarController *)self.window.rootViewController;
+	UINavigationController *navigationController = 
+    [[tabBarController viewControllers] objectAtIndex:0];
+	DiaryViewController *playersViewController = 
+    [[navigationController viewControllers] objectAtIndex:0];
+	playersViewController.players = players;
     // Override point for customization after application launch.
     return YES;
 }

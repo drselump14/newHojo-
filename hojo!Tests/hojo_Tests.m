@@ -2,7 +2,7 @@
 //  hojo_Tests.m
 //  hojo!Tests
 //
-//  Created by slamet kristanto on 1/21/12.
+//  Created by slamet kristanto on 1/12/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
 

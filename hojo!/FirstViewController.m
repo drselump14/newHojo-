@@ -1,26 +1,39 @@
 //
 //  FirstViewController.m
-//  hojo!
+//  tabBarTest
 //
-//  Created by slamet kristanto on 1/21/12.
+//  Created by slamet kristanto on 1/4/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
 
 #import "FirstViewController.h"
+#import "AppDelegate.h"
 
 @implementation FirstViewController
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"First", @"First");
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
-{
+{   
+    
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
