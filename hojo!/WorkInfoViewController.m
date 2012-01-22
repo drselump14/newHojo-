@@ -130,7 +130,7 @@
 -(void)updateLocation:(MyReverseGeocoder *)userCity
 {
     NSLog(@"%@",userCity.city);
-    [self performSelectorInBackground:@selector(showWeatherFor:) withObject:userCity.city];
+    //[self performSelectorInBackground:@selector(showWeatherFor:) withObject:userCity.city];
 }
 #pragma mark MKReverseGeocoder Delegate Methods
 /*- (void)reverseGeocoder:(MKReverseGeocoder *)geocoder didFindPlacemark:(MKPlacemark *)placemark
