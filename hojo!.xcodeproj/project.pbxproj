@@ -31,6 +31,7 @@
 		7308699214C9BD35004E8224 /* Gestures@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308697A14C9BD35004E8224 /* Gestures@2x.png */; };
 		7308699314C9BD35004E8224 /* Players.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308697B14C9BD35004E8224 /* Players.png */; };
 		7308699414C9BD35004E8224 /* Players@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7308697C14C9BD35004E8224 /* Players@2x.png */; };
+		73086B7614C9D96A004E8224 /* WorkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73086B7514C9D96A004E8224 /* WorkInfoViewController.m */; };
 		730A2C1314BEB26000B472B1 /* DiaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A2C1214BEB26000B472B1 /* DiaryCell.m */; };
 		730A2C1614BEB53000B472B1 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 730A2C1514BEB53000B472B1 /* Location.gpx */; };
 		730A2C1914BEB92100B472B1 /* DiaryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A2C1814BEB92100B472B1 /* DiaryDetailsViewController.m */; };
@@ -63,6 +64,21 @@
 		7324643014BDE654000A44FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7324642F14BDE654000A44FE /* Default@2x.png */; };
 		73277DE114C92E9D00313FFB /* TakeHojoFromMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 73277DDF14C92E9D00313FFB /* TakeHojoFromMap.m */; };
 		73277DE214C92E9D00313FFB /* TakeHojoFromMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73277DE014C92E9D00313FFB /* TakeHojoFromMap.xib */; };
+		733EEB9714CC1B9A004C6B5F /* ICB_WeatherConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEB9614CC1B9A004C6B5F /* ICB_WeatherConditions.m */; };
+		733EEB9C14CC1C4F004C6B5F /* MyReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEB9B14CC1C4F004C6B5F /* MyReverseGeocoder.m */; };
+		733EEBBA14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEB9F14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBBB14CC1C86004C6B5F /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBA114CC1C86004C6B5F /* CXMLNode_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBBC14CC1C86004C6B5F /* CXHTMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBA314CC1C86004C6B5F /* CXHTMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBBD14CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBA514CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBBE14CC1C86004C6B5F /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBA714CC1C86004C6B5F /* CXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBBF14CC1C86004C6B5F /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBA914CC1C86004C6B5F /* CXMLElement_CreationExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC014CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBAB14CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC114CC1C86004C6B5F /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBAD14CC1C86004C6B5F /* CXMLElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC214CC1C86004C6B5F /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBAF14CC1C86004C6B5F /* CXMLNamespaceNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC314CC1C86004C6B5F /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB114CC1C86004C6B5F /* CXMLNode_PrivateExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC414CC1C86004C6B5F /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB314CC1C86004C6B5F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC514CC1C86004C6B5F /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB514CC1C86004C6B5F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB814CC1C86004C6B5F /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		739110D314C8413400BC3595 /* CropsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739110D114C8413400BC3595 /* CropsTableViewController.m */; };
 		739110D414C8413400BC3595 /* CropsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739110D214C8413400BC3595 /* CropsTableViewController.xib */; };
 		7391111C14C86D5800BC3595 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7391111A14C86D5700BC3595 /* EditViewController.m */; };
@@ -109,6 +125,8 @@
 		7308697A14C9BD35004E8224 /* Gestures@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gestures@2x.png"; sourceTree = "<group>"; };
 		7308697B14C9BD35004E8224 /* Players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Players.png; sourceTree = "<group>"; };
 		7308697C14C9BD35004E8224 /* Players@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Players@2x.png"; sourceTree = "<group>"; };
+		73086B7414C9D96A004E8224 /* WorkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkInfoViewController.h; sourceTree = "<group>"; };
+		73086B7514C9D96A004E8224 /* WorkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkInfoViewController.m; sourceTree = "<group>"; };
 		730A2C1114BEB26000B472B1 /* DiaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryCell.h; sourceTree = "<group>"; };
 		730A2C1214BEB26000B472B1 /* DiaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryCell.m; sourceTree = "<group>"; };
 		730A2C1514BEB53000B472B1 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
@@ -154,6 +172,37 @@
 		73277DDE14C92E9D00313FFB /* TakeHojoFromMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeHojoFromMap.h; sourceTree = "<group>"; };
 		73277DDF14C92E9D00313FFB /* TakeHojoFromMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeHojoFromMap.m; sourceTree = "<group>"; };
 		73277DE014C92E9D00313FFB /* TakeHojoFromMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeHojoFromMap.xib; sourceTree = "<group>"; };
+		733EEB9514CC1B9A004C6B5F /* ICB_WeatherConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICB_WeatherConditions.h; sourceTree = "<group>"; };
+		733EEB9614CC1B9A004C6B5F /* ICB_WeatherConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICB_WeatherConditions.m; sourceTree = "<group>"; };
+		733EEB9A14CC1C4F004C6B5F /* MyReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReverseGeocoder.h; sourceTree = "<group>"; };
+		733EEB9B14CC1C4F004C6B5F /* MyReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReverseGeocoder.m; sourceTree = "<group>"; };
+		733EEB9E14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		733EEB9F14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		733EEBA014CC1C86004C6B5F /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		733EEBA114CC1C86004C6B5F /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		733EEBA214CC1C86004C6B5F /* CXHTMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHTMLDocument.h; sourceTree = "<group>"; };
+		733EEBA314CC1C86004C6B5F /* CXHTMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHTMLDocument.m; sourceTree = "<group>"; };
+		733EEBA414CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		733EEBA514CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		733EEBA614CC1C86004C6B5F /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		733EEBA714CC1C86004C6B5F /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		733EEBA814CC1C86004C6B5F /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		733EEBA914CC1C86004C6B5F /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		733EEBAA14CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		733EEBAB14CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		733EEBAC14CC1C86004C6B5F /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		733EEBAD14CC1C86004C6B5F /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		733EEBAE14CC1C86004C6B5F /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		733EEBAF14CC1C86004C6B5F /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		733EEBB014CC1C86004C6B5F /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		733EEBB114CC1C86004C6B5F /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		733EEBB214CC1C86004C6B5F /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		733EEBB314CC1C86004C6B5F /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		733EEBB414CC1C86004C6B5F /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		733EEBB514CC1C86004C6B5F /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		733EEBB714CC1C86004C6B5F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
+		733EEBB814CC1C86004C6B5F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
+		733EEBB914CC1C86004C6B5F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		739110D014C8413400BC3595 /* CropsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropsTableViewController.h; sourceTree = "<group>"; };
 		739110D114C8413400BC3595 /* CropsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropsTableViewController.m; sourceTree = "<group>"; };
 		739110D214C8413400BC3595 /* CropsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropsTableViewController.xib; sourceTree = "<group>"; };
@@ -255,8 +304,6 @@
 			children = (
 				7324642F14BDE654000A44FE /* Default@2x.png */,
 				7324642D14BDE639000A44FE /* Icon@2x.png */,
-				7324641E14BDE325000A44FE /* MapKit.framework */,
-				7324641C14BDE31B000A44FE /* CoreLocation.framework */,
 				732463E214BDE121000A44FE /* hojo! */,
 				7324640B14BDE121000A44FE /* hojo!Tests */,
 				732463DB14BDE121000A44FE /* Frameworks */,
@@ -276,6 +323,8 @@
 		732463DB14BDE121000A44FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7324641E14BDE325000A44FE /* MapKit.framework */,
+				7324641C14BDE31B000A44FE /* CoreLocation.framework */,
 				732463DC14BDE121000A44FE /* UIKit.framework */,
 				732463DE14BDE121000A44FE /* Foundation.framework */,
 				732463E014BDE121000A44FE /* CoreGraphics.framework */,
@@ -287,6 +336,8 @@
 		732463E214BDE121000A44FE /* hojo! */ = {
 			isa = PBXGroup;
 			children = (
+				733EEBC714CC1D3B004C6B5F /* TouchXML */,
+				733EEB9914CC1C03004C6B5F /* 作業情報 */,
 				7308696414C9BD35004E8224 /* Images */,
 				73BF2A0214C158E900D5A151 /* MemberPickerViewController.h */,
 				73BF2A0314C158E900D5A151 /* MemberPickerViewController.m */,
@@ -350,6 +401,69 @@
 				7324640E14BDE121000A44FE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		733EEB9914CC1C03004C6B5F /* 作業情報 */ = {
+			isa = PBXGroup;
+			children = (
+				73086B7414C9D96A004E8224 /* WorkInfoViewController.h */,
+				73086B7514C9D96A004E8224 /* WorkInfoViewController.m */,
+				733EEB9514CC1B9A004C6B5F /* ICB_WeatherConditions.h */,
+				733EEB9614CC1B9A004C6B5F /* ICB_WeatherConditions.m */,
+				733EEB9A14CC1C4F004C6B5F /* MyReverseGeocoder.h */,
+				733EEB9B14CC1C4F004C6B5F /* MyReverseGeocoder.m */,
+			);
+			name = "作業情報";
+			sourceTree = "<group>";
+		};
+		733EEB9D14CC1C86004C6B5F /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				733EEB9E14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.h */,
+				733EEB9F14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.m */,
+				733EEBA014CC1C86004C6B5F /* CXMLNode_CreationExtensions.h */,
+				733EEBA114CC1C86004C6B5F /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		733EEBB614CC1C86004C6B5F /* Tidy */ = {
+			isa = PBXGroup;
+			children = (
+				733EEBB714CC1C86004C6B5F /* CTidy.h */,
+				733EEBB814CC1C86004C6B5F /* CTidy.m */,
+			);
+			path = Tidy;
+			sourceTree = "<group>";
+		};
+		733EEBC714CC1D3B004C6B5F /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				733EEB9D14CC1C86004C6B5F /* Creation */,
+				733EEBA214CC1C86004C6B5F /* CXHTMLDocument.h */,
+				733EEBA314CC1C86004C6B5F /* CXHTMLDocument.m */,
+				733EEBA414CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.h */,
+				733EEBA514CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.m */,
+				733EEBA614CC1C86004C6B5F /* CXMLDocument.h */,
+				733EEBA714CC1C86004C6B5F /* CXMLDocument.m */,
+				733EEBA814CC1C86004C6B5F /* CXMLElement_CreationExtensions.h */,
+				733EEBA914CC1C86004C6B5F /* CXMLElement_CreationExtensions.m */,
+				733EEBAA14CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.h */,
+				733EEBAB14CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.m */,
+				733EEBAC14CC1C86004C6B5F /* CXMLElement.h */,
+				733EEBAD14CC1C86004C6B5F /* CXMLElement.m */,
+				733EEBAE14CC1C86004C6B5F /* CXMLNamespaceNode.h */,
+				733EEBAF14CC1C86004C6B5F /* CXMLNamespaceNode.m */,
+				733EEBB014CC1C86004C6B5F /* CXMLNode_PrivateExtensions.h */,
+				733EEBB114CC1C86004C6B5F /* CXMLNode_PrivateExtensions.m */,
+				733EEBB214CC1C86004C6B5F /* CXMLNode_XPathExtensions.h */,
+				733EEBB314CC1C86004C6B5F /* CXMLNode_XPathExtensions.m */,
+				733EEBB414CC1C86004C6B5F /* CXMLNode.h */,
+				733EEBB514CC1C86004C6B5F /* CXMLNode.m */,
+				733EEBB614CC1C86004C6B5F /* Tidy */,
+				733EEBB914CC1C86004C6B5F /* TouchXML.h */,
+			);
+			name = TouchXML;
 			sourceTree = "<group>";
 		};
 		73FFF5F214C9AE6E00D5A6AF /* 作業情報 */ = {
@@ -519,6 +633,22 @@
 				739110D314C8413400BC3595 /* CropsTableViewController.m in Sources */,
 				7391111C14C86D5800BC3595 /* EditViewController.m in Sources */,
 				73277DE114C92E9D00313FFB /* TakeHojoFromMap.m in Sources */,
+				73086B7614C9D96A004E8224 /* WorkInfoViewController.m in Sources */,
+				733EEB9714CC1B9A004C6B5F /* ICB_WeatherConditions.m in Sources */,
+				733EEB9C14CC1C4F004C6B5F /* MyReverseGeocoder.m in Sources */,
+				733EEBBA14CC1C86004C6B5F /* CXMLDocument_CreationExtensions.m in Sources */,
+				733EEBBB14CC1C86004C6B5F /* CXMLNode_CreationExtensions.m in Sources */,
+				733EEBBC14CC1C86004C6B5F /* CXHTMLDocument.m in Sources */,
+				733EEBBD14CC1C86004C6B5F /* CXMLDocument_PrivateExtensions.m in Sources */,
+				733EEBBE14CC1C86004C6B5F /* CXMLDocument.m in Sources */,
+				733EEBBF14CC1C86004C6B5F /* CXMLElement_CreationExtensions.m in Sources */,
+				733EEBC014CC1C86004C6B5F /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				733EEBC114CC1C86004C6B5F /* CXMLElement.m in Sources */,
+				733EEBC214CC1C86004C6B5F /* CXMLNamespaceNode.m in Sources */,
+				733EEBC314CC1C86004C6B5F /* CXMLNode_PrivateExtensions.m in Sources */,
+				733EEBC414CC1C86004C6B5F /* CXMLNode_XPathExtensions.m in Sources */,
+				733EEBC514CC1C86004C6B5F /* CXMLNode.m in Sources */,
+				733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
