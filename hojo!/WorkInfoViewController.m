@@ -28,16 +28,18 @@
     NSString *userLong=[[NSString alloc]initWithFormat:@"%lf",userLocationLong];
     NSLog(@"%@,%@",userLat,userLong);
     [self performSelector:@selector(showLatitude:showLongitude:) withObject:userLat withObject:userLong];
-    /*CLGeocoder *geocoder=[[CLGeocoder alloc]init];
+    CLGeocoder *geocoder=[[CLGeocoder alloc]init];
      [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks,NSError *error){
      
      for (CLPlacemark *placemark in placemarks) {
-     test=[placemark locality];
-     NSLog(@"%@",test);
+         city=[placemark locality];
+         pref=[placemark administrativeArea];
+         address=[placemark thoroughfare];
+         //NSLog(@"%@",test);
      //[self performSelectorInBackground:@selector(showWeatherFor:) withObject:test];
      }
      
-     }];*/
+     }];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -123,7 +125,8 @@
     [self.highTempLabel setText:[NSString stringWithFormat:@"%d°C", weather.highTemp]];
     [self.lowTempLabel setText:[NSString stringWithFormat:@"%d°C", weather.lowTemp]];
     [self.conditionLabel setText:weather.condition];
-    [self.cityLabel setText:weather.location];
+    NSString *userLoc=[[NSString alloc]initWithFormat:@"%@%@%@",pref,city,address];
+    [self.cityLabel setText:userLoc];
     
 }
 

@@ -20,6 +20,7 @@
     CLLocationManager *locationManager;
     id<CLLocationManagerDelegate> locationDelegate;
     double userLocationLat,userLocationLong;
+    NSString *city,*pref,*address;
     
 }
 @property (nonatomic,retain) IBOutlet UILabel *currentTempLabel,*highTempLabel,*lowTempLabel,*conditionLabel,*cityLabel,*humidityLabel;

@@ -21,16 +21,16 @@
         CXMLDocument *parser = [[CXMLDocument alloc] initWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/xml?latlng=%@,%@&sensor=true&language=en",latitude,longitude]] options:0 error:nil];
         NSArray *nodes = NULL;
         //  searching for piglet nodes
-        nodes = [parser nodesForXPath:@"/GeocodeResponse/result[1]/address_component[3]/long_name" error:nil];
+        nodes = [parser nodesForXPath:@"/GeocodeResponse/result/address_component/long_name" error:nil];
         
         for (CXMLElement *node in nodes) {
             int counter;
             for(counter = 0; counter < [node childCount]; counter++) {
-                city=[[node childAtIndex:counter] stringValue];
+                //city=[[node childAtIndex:counter] stringValue];
             }
         }
     }
-    
+    city=@"takamatsu";
     return self;
 }
 
