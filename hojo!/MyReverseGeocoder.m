@@ -30,7 +30,7 @@
             }
         }
     }
-    city=@"takamatsu";
+    city=@"kagawa";
     return self;
 }
 

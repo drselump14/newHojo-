@@ -14,10 +14,13 @@
     IBOutlet MKMapView *myMapView;
     IBOutlet UIToolbar *toolBar;
     NSString *editMap;
+    
     //IBOutlet UINavigationBar *mapBar;
 }
 @property(strong,nonatomic) IBOutlet MKMapView *myMapView;
 @property(strong,nonatomic) IBOutlet UIToolbar *toolBar;
 @property(strong,nonatomic) NSString *editMap;
+
+-(void)showDetails:(id)sender;
 @end
 

@@ -101,18 +101,9 @@
     // Return the number of rows in the section.
     return [self.players count];
 }
-/*- (UIImage *)imageForRating:(int)rating
-{
-	switch (rating)
-	{
-		case 1: return [UIImage imageNamed:@"1StarSmall.png"];
-		case 2: return [UIImage imageNamed:@"2StarsSmall.png"];
-		case 3: return [UIImage imageNamed:@"3StarsSmall.png"];
-		case 4: return [UIImage imageNamed:@"4StarsSmall.png"];
-		case 5: return [UIImage imageNamed:@"5StarsSmall.png"];
-	}
-	return nil;
-}*/
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"今日の予定";
+}
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (editingStyle == UITableViewCellEditingStyleDelete)
@@ -129,8 +120,8 @@
 	Player *player = [self.players objectAtIndex:indexPath.row];
     NSString *topLabel=[[NSString alloc]initWithFormat:@"%@(%@)",player.workName,player.crop];
     NSString *bottomLabel=[[NSString alloc]initWithFormat:@"%@(%@~%@)",player.hojo,player.startTime,player.finishTime];
-	cell.nameLabel.text = topLabel;
-	cell.gameLabel.text = bottomLabel;
+	cell.textLabel.text = topLabel;
+	cell.detailTextLabel.text = bottomLabel;
     return cell;
 }
 

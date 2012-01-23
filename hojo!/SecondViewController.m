@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "AppDelegate.h"
 #import "MyAnnotation.h"
+#import "MapDetailsViewController.h"
 
 @implementation SecondViewController
 @synthesize myMapView,toolBar;
@@ -185,17 +186,24 @@ didUpdateUserLocation:
 	pinView.animatesDrop=YES;
 	pinView.canShowCallout=YES;
 	pinView.pinColor=MKPinAnnotationColorGreen;
-	
+	NSString *userLoc=[[NSString alloc]initWithFormat:@"%1.6lf,%1.6lf",annotation.coordinate.latitude,annotation.coordinate.longitude];
 	
 	UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-	[rightButton setTitle:annotation.title forState:UIControlStateNormal];
+	[rightButton setTitle:userLoc forState:UIControlStateNormal];
 	[rightButton addTarget:self
-					action:@selector(showDetails:)
+					action:@selector(showDetails:) 
 		  forControlEvents:UIControlEventTouchUpInside];
+    //[rightButton performSelector:@selector(showDetails:getCooordinate:) withObject:annotation.
 	pinView.rightCalloutAccessoryView = rightButton;
 	
 	
 	return pinView;
+}
+-(void)showDetails:(id)sender{
+    MapDetailsViewController *mapDetail=[[MapDetailsViewController alloc]initWithNibName:@"MapDetailsViewController" bundle:nil];
+    mapDetail.destinationCoordinate=((UIButton*)sender).currentTitle;
+    //mapDetail.destinationCoordinate=((UIButton*)sender).
+    [self.navigationController pushViewController:mapDetail animated:YES];
 }
 
 @end
