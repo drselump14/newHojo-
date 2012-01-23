@@ -39,6 +39,7 @@
 		730BC2AB14C51CAD00FE257F /* AddDiaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730BC2A914C51CAD00FE257F /* AddDiaryViewController.xib */; };
 		730BC2B014C5581D00FE257F /* StartTimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 730BC2AE14C5581C00FE257F /* StartTimePickerViewController.m */; };
 		730BC2B114C5581D00FE257F /* StartTimePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 730BC2AF14C5581D00FE257F /* StartTimePickerViewController.xib */; };
+		7310F89A14CC5C2000DE76B5 /* MemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7310F89914CC5C2000DE76B5 /* MemoViewController.m */; };
 		732463DD14BDE121000A44FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732463DC14BDE121000A44FE /* UIKit.framework */; };
 		732463DF14BDE121000A44FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732463DE14BDE121000A44FE /* Foundation.framework */; };
 		732463E114BDE121000A44FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732463E014BDE121000A44FE /* CoreGraphics.framework */; };
@@ -138,6 +139,8 @@
 		730BC2AD14C5581C00FE257F /* StartTimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTimePickerViewController.h; sourceTree = "<group>"; };
 		730BC2AE14C5581C00FE257F /* StartTimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTimePickerViewController.m; sourceTree = "<group>"; };
 		730BC2AF14C5581D00FE257F /* StartTimePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartTimePickerViewController.xib; sourceTree = "<group>"; };
+		7310F89814CC5C2000DE76B5 /* MemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoViewController.h; sourceTree = "<group>"; };
+		7310F89914CC5C2000DE76B5 /* MemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoViewController.m; sourceTree = "<group>"; };
 		732463D814BDE121000A44FE /* hojo!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hojo!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		732463DC14BDE121000A44FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		732463DE14BDE121000A44FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -299,6 +302,15 @@
 			path = Images;
 			sourceTree = SOURCE_ROOT;
 		};
+		7310F89614CC5BF400DE76B5 /* メモ */ = {
+			isa = PBXGroup;
+			children = (
+				7310F89814CC5C2000DE76B5 /* MemoViewController.h */,
+				7310F89914CC5C2000DE76B5 /* MemoViewController.m */,
+			);
+			name = "メモ";
+			sourceTree = "<group>";
+		};
 		732463CD14BDE121000A44FE = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +348,7 @@
 		732463E214BDE121000A44FE /* hojo! */ = {
 			isa = PBXGroup;
 			children = (
+				7310F89614CC5BF400DE76B5 /* メモ */,
 				733EEBC714CC1D3B004C6B5F /* TouchXML */,
 				733EEB9914CC1C03004C6B5F /* 作業情報 */,
 				7308696414C9BD35004E8224 /* Images */,
@@ -363,7 +376,6 @@
 				732463F814BDE121000A44FE /* SecondViewController.h */,
 				732463F914BDE121000A44FE /* SecondViewController.m */,
 				732463FB14BDE121000A44FE /* second.png */,
-				73FFF5F214C9AE6E00D5A6AF /* 作業情報 */,
 				732463FD14BDE121000A44FE /* second@2x.png */,
 				7324642B14BDE4AB000A44FE /* MyAnnotation.m */,
 				7324642A14BDE4AB000A44FE /* MyAnnotation.h */,
@@ -464,13 +476,6 @@
 				733EEBB914CC1C86004C6B5F /* TouchXML.h */,
 			);
 			name = TouchXML;
-			sourceTree = "<group>";
-		};
-		73FFF5F214C9AE6E00D5A6AF /* 作業情報 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "作業情報";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,6 +654,7 @@
 				733EEBC414CC1C86004C6B5F /* CXMLNode_XPathExtensions.m in Sources */,
 				733EEBC514CC1C86004C6B5F /* CXMLNode.m in Sources */,
 				733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */,
+				7310F89A14CC5C2000DE76B5 /* MemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

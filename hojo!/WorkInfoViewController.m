@@ -19,6 +19,7 @@
 @synthesize conditionImage;
 @synthesize locationManager;
 @synthesize locationDelegate;
+@synthesize member;
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     //[locationManager stopUpdatingLocation];
@@ -81,14 +82,11 @@
         locationManager=[[CLLocationManager alloc] init];
     }
     locationManager.delegate=self; 
-    locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+    //locationManager.desiredAccuracy=kCLLocationAccuracyKilometer;
     [locationManager startUpdatingLocation];
-    /*CLGeocoder *geocoder=[[CLGeocoder alloc]init];
-     [geocoder reverseGeocodeLocation:locationManager.location completionHandler:<#^(NSArray *placemarks, NSError *error)completionHandler#>{
-     
-     
-     }];*/
-    
+    memberTable.delegate=self;
+    memberTable.dataSource=self;
+    member=[[NSMutableArray alloc]initWithObjects:@"細野",@"村上",@"森",@"山根", nil];
     // Geocode coordinate (normally we'd use location.coordinate here instead of coord).
     // This will get us something we can query Google's Weather API with
     /*MKReverseGeocoder *geocoder = [[MKReverseGeocoder alloc] initWithCoordinate:coord];
@@ -97,6 +95,37 @@
     //[geocoder reverseGeocodeLocation:coord completionHandler:^(NSArray *placemarks,NSError *error)];
     //weatherTable.delegate=self;
     //weatherTable.dataSource=self;
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+        return [member count];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"MemberCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text=[member objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
+    if (cell.accessoryType==UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    else if(cell.accessoryType==UITableViewCellAccessoryNone){
+        cell.accessoryType=UITableViewCellAccessoryCheckmark;
+    }
+    
+    
+    
 }
 -(void)showLatitude:(NSString *)latitude showLongitude:(NSString *)longitude{
     MyReverseGeocoder *userLocation = [[MyReverseGeocoder alloc] initWithLatitude:latitude initWithLongitude:longitude];

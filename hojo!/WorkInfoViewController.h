@@ -13,7 +13,7 @@
 @interface WorkInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>{
     //IBOutlet UITableView *weatherTable;
     //IBOutlet UIImageView *weatherImage;
-    //IBOutlet UIImageView *memberTable;
+    IBOutlet UITableView *memberTable;
     IBOutlet UILabel *currentTempLabel,*highTempLabel,*lowTempLabel,*conditionLabel,*cityLabel,*humidityLabel;
     IBOutlet UIImageView *conditionsImageView;
     UIImage *conditionsImage;
@@ -21,14 +21,14 @@
     id<CLLocationManagerDelegate> locationDelegate;
     double userLocationLat,userLocationLong;
     NSString *city,*pref,*address;
-    
+    NSMutableArray *member;
 }
 @property (nonatomic,retain) IBOutlet UILabel *currentTempLabel,*highTempLabel,*lowTempLabel,*conditionLabel,*cityLabel,*humidityLabel;
 @property (nonatomic,retain) IBOutlet UIImageView *conditionImageView;
 @property (nonatomic,retain) UIImage *conditionImage;
 @property (nonatomic,retain) CLLocationManager *locationManager;
 @property (copy)id<CLLocationManagerDelegate> locationDelegate;
-
+@property (nonatomic,retain) NSMutableArray *member;
 
 
 @end
