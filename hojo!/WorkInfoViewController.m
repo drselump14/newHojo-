@@ -11,6 +11,7 @@
 #import "MyReverseGeocoder.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MemberPickerController.h"
 
 
 @implementation WorkInfoViewController
@@ -191,6 +192,21 @@
  return cell;
  }
  */
+-(IBAction)addTodayMember:(id)sender{
+    MemberPickerController *detailViewController=[[MemberPickerController alloc] initWithNibName:@"MemberPickerController" bundle:nil];
+    detailViewController.delegate=(id)self;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+-(void)didReceiveMember:(NSString *)newMember{
+	NSLog(@"%@",newMember);
+    [self.member addObject:newMember];
+    NSIndexPath *indexPath = 
+    [NSIndexPath indexPathForRow:[self.member count] - 1 
+                       inSection:0];
+	[memberTable insertRowsAtIndexPaths:
+     [NSArray arrayWithObject:indexPath] 
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];

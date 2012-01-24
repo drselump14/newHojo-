@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MemberPickerController.h"
+
+@protocol WorkInfoViewControllerDelegate
+
+-(void)didReceiveMember:(NSString *)newMember;
+
+@end
 
 @interface WorkInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>{
     //IBOutlet UITableView *weatherTable;
@@ -29,6 +36,8 @@
 @property (nonatomic,retain) CLLocationManager *locationManager;
 @property (copy)id<CLLocationManagerDelegate> locationDelegate;
 @property (nonatomic,retain) NSMutableArray *member;
+
+-(IBAction)addTodayMember:(id)sender;
 
 
 @end

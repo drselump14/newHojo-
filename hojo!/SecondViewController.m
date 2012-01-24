@@ -60,7 +60,7 @@ didUpdateUserLocation:
     MKUserLocation *userLocation = myMapView.userLocation;
     MKCoordinateRegion region =
     MKCoordinateRegionMakeWithDistance (
-                                        userLocation.location.coordinate, 500, 500);
+                                        userLocation.location.coordinate, 1500, 1500);
     [myMapView setRegion:region animated
     :NO];
     
@@ -93,6 +93,22 @@ didUpdateUserLocation:
     theCoordinate4.latitude = 34.310919;
     theCoordinate4.longitude = 134.0105019;
     
+    CLLocationCoordinate2D theCoordinate5;
+    theCoordinate5.latitude = 34.080527;
+    theCoordinate5.longitude = 133.649272;
+	
+	CLLocationCoordinate2D theCoordinate6;
+    theCoordinate6.latitude = 34.07974;
+    theCoordinate6.longitude = 133.647201;
+	
+	CLLocationCoordinate2D theCoordinate7;
+    theCoordinate7.latitude = 34.084254;
+    theCoordinate7.longitude = 133.652179;
+	
+	CLLocationCoordinate2D theCoordinate8;
+    theCoordinate8.latitude = 34.083846;
+    theCoordinate8.longitude = 133.649594;
+    
     MyAnnotation* myAnnotation1=[[MyAnnotation alloc] init];
     
 	myAnnotation1.coordinate=theCoordinate1;
@@ -117,15 +133,47 @@ didUpdateUserLocation:
 	myAnnotation4.title=@"後期研究";
 	myAnnotation4.subtitle=@"重田研究室";
     
+    MyAnnotation* myAnnotation5=[[MyAnnotation alloc] init];
+    
+	myAnnotation5.coordinate=theCoordinate5;
+	myAnnotation5.title=@"圃場A";
+	myAnnotation5.subtitle=@"井戸地区の南側";
+	
+	MyAnnotation* myAnnotation6=[[MyAnnotation alloc] init];
+	
+	myAnnotation6.coordinate=theCoordinate6;
+	myAnnotation6.title=@"圃場B";
+	myAnnotation6.subtitle=@"井戸地区の北側";
+	
+	MyAnnotation* myAnnotation7=[[MyAnnotation alloc] init];
+	
+	myAnnotation7.coordinate=theCoordinate7;
+	myAnnotation7.title=@"圃場C";
+	myAnnotation7.subtitle=@"井戸地区の西側";
+	
+	MyAnnotation* myAnnotation8=[[MyAnnotation alloc] init];
+	
+	myAnnotation8.coordinate=theCoordinate8;
+	myAnnotation8.title=@"圃場D";
+	myAnnotation8.subtitle=@"井戸地区の東側";
+    
     [myMapView addAnnotation:myAnnotation1];
     [myMapView addAnnotation:myAnnotation2];
     [myMapView addAnnotation:myAnnotation3];
     [myMapView addAnnotation:myAnnotation4];
+    [myMapView addAnnotation:myAnnotation5];
+    [myMapView addAnnotation:myAnnotation6];
+    [myMapView addAnnotation:myAnnotation7];
+    [myMapView addAnnotation:myAnnotation8];
     
     [annotations addObject:myAnnotation1];
     [annotations addObject:myAnnotation2];
     [annotations addObject:myAnnotation3];
     [annotations addObject:myAnnotation4];
+    [annotations addObject:myAnnotation5];
+    [annotations addObject:myAnnotation6];
+    [annotations addObject:myAnnotation7];
+    [annotations addObject:myAnnotation8];
     
 }
 
