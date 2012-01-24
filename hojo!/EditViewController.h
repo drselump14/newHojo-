@@ -15,6 +15,7 @@
 -(void)didReceiveStartTime:(NSString *)startTime didReceiveFinishTime:(NSString *)finishTime;
 -(void)didReceiveWorkPlace:(NSString *)workPlace;
 -(void)didReceiveCrop:(NSString *)crop;
+-(void)didreceivePestiside:(NSString *)pest;
 
 @end
 
@@ -24,17 +25,17 @@
     id<DiaryViewDelegate> delegate;
     TakeHojoFromMap *takeHojoFromMap;
     IBOutlet UITableView *editTable;
-    NSMutableArray *Label1,*Label2;
-    NSString *workName,*cropName,*workPlaceString;
+    NSMutableArray *Label1,*Label2,*Label3;
+    NSString *workName,*cropName,*workPlaceString,*carrierString,*pestiside,*pestVolume,*pestDilution;
     NSString *startTimeString,*finishTimeString;
     NSString *editTableSignal;
     NSInteger editTableRow;
     
 }
-@property (nonatomic,strong) NSMutableArray *Label1,*Label2;
+@property (nonatomic,strong) NSMutableArray *Label1,*Label2,*Label3;
 @property (nonatomic,retain) TakeHojoFromMap *takeHojoFromMap;
 @property (retain,nonatomic) id<DiaryViewDelegate> delegate;
-@property (nonatomic,copy) NSString *workName,*cropName,*workPlaceString,*startTimeString,*finishTimeString;
+@property (nonatomic,copy) NSString *workName,*cropName,*workPlaceString,*carrierString,*pestiside,*pestVolume,*pestDilution,*startTimeString,*finishTimeString;
 @property (copy) NSString *editTableSignal;
 @property NSInteger editTableRow;
 -(IBAction)saveDiary:(id)sender;

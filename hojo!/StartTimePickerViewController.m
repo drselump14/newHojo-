@@ -70,9 +70,16 @@
         UISwitch *switchObj = [[UISwitch alloc] init];
         switchObj.on = NO;
         cell.accessoryView = switchObj;
+        [switchObj addTarget:self action:@selector(allDays:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return cell;
+}
+-(void)allDays:(id)sender{
+    startTimeLabel=@"09:00";
+    finishTimeLabel=@"17:00";
+    [workTimeTable reloadData];
+             
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {

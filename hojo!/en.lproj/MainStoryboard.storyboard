@@ -704,7 +704,7 @@
     </scenes>
     <resources>
         <image name="1Star.png" width="38" height="38"/>
-        <image name="calculator.png" width="16" height="16"/>
+        <image name="calculator.png" width="26" height="26"/>
         <image name="pencilangled.png" width="26" height="26"/>
         <image name="world.png" width="26" height="26"/>
     </resources>

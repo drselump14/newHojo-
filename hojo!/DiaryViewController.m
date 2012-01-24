@@ -64,6 +64,7 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = [players count];
 
 }
 
@@ -110,6 +111,10 @@
 	{
 		[self.players removeObjectAtIndex:indexPath.row];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if ([UIApplication sharedApplication].applicationIconBadgeNumber>0) {
+            [UIApplication sharedApplication].applicationIconBadgeNumber--;
+        }
+
 	}   
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -184,9 +189,11 @@
     UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
     if (cell.accessoryType==UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
+        [UIApplication sharedApplication].applicationIconBadgeNumber++;
     }
     else if(cell.accessoryType==UITableViewCellAccessoryNone){
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
+        [UIApplication sharedApplication].applicationIconBadgeNumber--;
     }
 
     

@@ -13,11 +13,12 @@
 #import "TakeHojoFromMap.h"
 #import "DiaryViewController.h"
 #import "Player.h"
+#import "pestisideViewController.h"
 
 @implementation EditViewController
-@synthesize Label1,Label2;
+@synthesize Label1,Label2,Label3;
 @synthesize takeHojoFromMap;
-@synthesize workName,cropName,workPlaceString,startTimeString,finishTimeString;
+@synthesize workName,cropName,workPlaceString,startTimeString,finishTimeString,carrierString,pestiside,pestVolume,pestDilution;
 @synthesize editTableSignal;
 @synthesize editTableRow;
 @synthesize delegate;
@@ -57,6 +58,7 @@
     editTable.delegate=self;
     Label1=[NSArray arrayWithObjects:@"作業名",@"農作物",@"作業場",@"作業時間",nil];
     Label2=[NSArray arrayWithObjects:@"農薬種", @"農薬のボリューム",@"希釈(倍)",nil];
+    Label3=[NSArray arrayWithObjects:@"キャリー数", nil];
     UIBarButtonItem *addButton=[[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(saveDiary:)];
     [self.navigationItem setRightBarButtonItem:addButton];
     // Do any additional setup after loading the view from its nib.
@@ -69,13 +71,20 @@
         return [Label1 count];
     }
     else{
-        return [Label2 count];
+        if ([workName isEqualToString:@"防除"]) {
+            return [Label2 count];
+                        
+        }
+        else{
+            return [Label3 count];
+        }
+        
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if(section == 1){
-        if (workName==@"防除") {
+        if ([workName isEqualToString:@"防除"]||[workName isEqualToString:@"収穫"]) {
             return @"備考";
         }
         else
@@ -117,19 +126,22 @@
 
     }
     else{
-        if (workName==@"防除") {
+        if ([workName isEqualToString:@"防除"]) {
             cell.textLabel.text=[Label2 objectAtIndex:indexPath.row];
-            /*if(indexPath.row==2){
-                cell.detailTextLabel.text=workPlaceString;
+            if(indexPath.row==2){
+                cell.detailTextLabel.text=pestDilution;
             }
             else if(indexPath.row==1){
-                cell.detailTextLabel.text=cropName;
+                cell.detailTextLabel.text=pestVolume;
             }
-            else if(indexPath.row==0){
-                //cell.detailTextLabel.text=theWorkData.workData;
-                cell.detailTextLabel.text=workName;
-            }*/
+            else{
+                cell.detailTextLabel.text=pestiside;
+            }
 
+        }
+        else if([workName isEqualToString:@"収穫"]){
+            cell.textLabel.text=[Label3 objectAtIndex:indexPath.row];
+            cell.detailTextLabel.text=carrierString;
         }
         else{
             cell.hidden=YES;
@@ -144,6 +156,7 @@
         if (indexPath.row==0) {
             WorkNameTableViewController *workTable=[[WorkNameTableViewController alloc]init];
             workTable.delegate=self;
+            workTable.workName=workName;
             [self.navigationController pushViewController:workTable animated:YES];
         }
         else if(indexPath.row==1){
@@ -169,12 +182,28 @@
             // Pass the selected object to the new view controller.
             StartTimePickerViewController *timeView=[[StartTimePickerViewController alloc]init];
             timeView.delegate=self;
+            timeView.startTimeLabel=startTimeString;
+            timeView.finishTimeLabel=finishTimeString;
             [self.navigationController pushViewController:timeView animated:YES];
         }
 
     }
     else{
-        
+        if (indexPath.row==0) {
+            if ([workName isEqualToString:@"防除"]) {
+                pestisideViewController *pestisideView=[[pestisideViewController alloc]initWithNibName:@"pestisideViewController" bundle:nil];
+                pestisideView.delegate=self;
+                [self.navigationController pushViewController:pestisideView animated:YES];
+            } else {
+                
+            }
+        }
+        else if(indexPath.row==1){
+            
+        }
+        else {
+            
+        }
     }
 }
 -(IBAction)saveDiary:(id)sender{
@@ -218,6 +247,10 @@
 }
 -(void)didReceiveWorkPlace:(NSString *)workPlace{
     workPlaceString=workPlace;
+    [editTable reloadData];
+}
+-(void)didreceivePestiside:(NSString *)pest{
+    pestiside=pest;
     [editTable reloadData];
 }
 - (void)viewDidUnload

@@ -36,7 +36,7 @@
     player.finishTime=@"10:30";
     [players addObject:player];
     player=[[Player alloc] init];
-    player.workName=@"水やり";
+    player.workName=@"防除";
     player.crop=@"レタス";
     player.hojo=@"圃場A";
     player.startTime=@"10:30";

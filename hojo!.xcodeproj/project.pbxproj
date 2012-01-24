@@ -82,10 +82,14 @@
 		733EEBC414CC1C86004C6B5F /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB314CC1C86004C6B5F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		733EEBC514CC1C86004C6B5F /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB514CC1C86004C6B5F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB814CC1C86004C6B5F /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7350896314CE4D920097953D /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896214CE4D920097953D /* Default-Portrait~ipad.png */; };
+		7350896514CE4D9E0097953D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896414CE4D9E0097953D /* Icon-72.png */; };
 		739110D314C8413400BC3595 /* CropsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739110D114C8413400BC3595 /* CropsTableViewController.m */; };
 		739110D414C8413400BC3595 /* CropsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739110D214C8413400BC3595 /* CropsTableViewController.xib */; };
 		7391111C14C86D5800BC3595 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7391111A14C86D5700BC3595 /* EditViewController.m */; };
 		7391111D14C86D5800BC3595 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7391111B14C86D5700BC3595 /* EditViewController.xib */; };
+		7392111F14CEAD77004024A1 /* pestisideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7392111D14CEAD77004024A1 /* pestisideViewController.m */; };
+		7392112014CEAD77004024A1 /* pestisideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7392111E14CEAD77004024A1 /* pestisideViewController.xib */; };
 		739C743F14BE81AD003F9831 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C743E14BE81AD003F9831 /* Player.m */; };
 		739C744214BE867C003F9831 /* DiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739C744114BE867C003F9831 /* DiaryViewController.m */; };
 		739E37FD14CD1882006AA739 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E37FC14CD1882006AA739 /* AVFoundation.framework */; };
@@ -280,12 +284,17 @@
 		733EEBB714CC1C86004C6B5F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		733EEBB814CC1C86004C6B5F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		733EEBB914CC1C86004C6B5F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		7350896214CE4D920097953D /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		7350896414CE4D9E0097953D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		739110D014C8413400BC3595 /* CropsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropsTableViewController.h; sourceTree = "<group>"; };
 		739110D114C8413400BC3595 /* CropsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropsTableViewController.m; sourceTree = "<group>"; };
 		739110D214C8413400BC3595 /* CropsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropsTableViewController.xib; sourceTree = "<group>"; };
 		7391111914C86D5700BC3595 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		7391111A14C86D5700BC3595 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		7391111B14C86D5700BC3595 /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		7392111C14CEAD77004024A1 /* pestisideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pestisideViewController.h; sourceTree = "<group>"; };
+		7392111D14CEAD77004024A1 /* pestisideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pestisideViewController.m; sourceTree = "<group>"; };
+		7392111E14CEAD77004024A1 /* pestisideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = pestisideViewController.xib; sourceTree = "<group>"; };
 		739C743D14BE81AD003F9831 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		739C743E14BE81AD003F9831 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		739C744014BE867C003F9831 /* DiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryViewController.h; sourceTree = "<group>"; };
@@ -413,6 +422,9 @@
 				73277DDE14C92E9D00313FFB /* TakeHojoFromMap.h */,
 				73277DDF14C92E9D00313FFB /* TakeHojoFromMap.m */,
 				73277DE014C92E9D00313FFB /* TakeHojoFromMap.xib */,
+				7392111C14CEAD77004024A1 /* pestisideViewController.h */,
+				7392111D14CEAD77004024A1 /* pestisideViewController.m */,
+				7392111E14CEAD77004024A1 /* pestisideViewController.xib */,
 			);
 			name = EditTable;
 			sourceTree = "<group>";
@@ -462,6 +474,8 @@
 		732463CD14BDE121000A44FE = {
 			isa = PBXGroup;
 			children = (
+				7350896414CE4D9E0097953D /* Icon-72.png */,
+				7350896214CE4D920097953D /* Default-Portrait~ipad.png */,
 				7324642F14BDE654000A44FE /* Default@2x.png */,
 				7324642D14BDE639000A44FE /* Icon@2x.png */,
 				732463E214BDE121000A44FE /* hojo! */,
@@ -498,38 +512,38 @@
 		732463E214BDE121000A44FE /* hojo! */ = {
 			isa = PBXGroup;
 			children = (
-				7310F89614CC5BF400DE76B5 /* メモ */,
-				733EEBC714CC1D3B004C6B5F /* TouchXML */,
-				733EEB9914CC1C03004C6B5F /* 作業情報 */,
-				7308696414C9BD35004E8224 /* Images */,
-				73BF2A0214C158E900D5A151 /* MemberPickerViewController.h */,
-				73BF2A0314C158E900D5A151 /* MemberPickerViewController.m */,
-				730A2C1514BEB53000B472B1 /* Location.gpx */,
-				730A2C1114BEB26000B472B1 /* DiaryCell.h */,
-				730A2C1214BEB26000B472B1 /* DiaryCell.m */,
-				732463EB14BDE121000A44FE /* AppDelegate.h */,
-				732463EC14BDE121000A44FE /* AppDelegate.m */,
-				732463EE14BDE121000A44FE /* MainStoryboard.storyboard */,
-				739C744014BE867C003F9831 /* DiaryViewController.h */,
-				739C744114BE867C003F9831 /* DiaryViewController.m */,
 				730BC2A714C51CAD00FE257F /* AddDiaryViewController.h */,
 				730BC2A814C51CAD00FE257F /* AddDiaryViewController.m */,
 				730BC2A914C51CAD00FE257F /* AddDiaryViewController.xib */,
+				732463EB14BDE121000A44FE /* AppDelegate.h */,
+				732463EC14BDE121000A44FE /* AppDelegate.m */,
+				730A2C1114BEB26000B472B1 /* DiaryCell.h */,
+				730A2C1214BEB26000B472B1 /* DiaryCell.m */,
 				730A2C1714BEB92100B472B1 /* DiaryDetailsViewController.h */,
 				730A2C1814BEB92100B472B1 /* DiaryDetailsViewController.m */,
-				732463F114BDE121000A44FE /* FirstViewController.h */,
-				732463F214BDE121000A44FE /* FirstViewController.m */,
-				739C743D14BE81AD003F9831 /* Player.h */,
-				739C743E14BE81AD003F9831 /* Player.m */,
-				739E380914CD458B006AA739 /* 圃場マップ */,
+				739C744014BE867C003F9831 /* DiaryViewController.h */,
+				739C744114BE867C003F9831 /* DiaryViewController.m */,
+				730423B414C8E5910037E8E4 /* EditTable */,
 				732463F414BDE121000A44FE /* first.png */,
 				732463F614BDE121000A44FE /* first@2x.png */,
+				732463F114BDE121000A44FE /* FirstViewController.h */,
+				732463F214BDE121000A44FE /* FirstViewController.m */,
+				7308696414C9BD35004E8224 /* Images */,
+				730A2C1514BEB53000B472B1 /* Location.gpx */,
+				732463EE14BDE121000A44FE /* MainStoryboard.storyboard */,
+				73BF2A0214C158E900D5A151 /* MemberPickerViewController.h */,
+				73BF2A0314C158E900D5A151 /* MemberPickerViewController.m */,
+				7324642A14BDE4AB000A44FE /* MyAnnotation.h */,
+				7324642B14BDE4AB000A44FE /* MyAnnotation.m */,
+				739C743D14BE81AD003F9831 /* Player.h */,
+				739C743E14BE81AD003F9831 /* Player.m */,
 				732463FB14BDE121000A44FE /* second.png */,
 				732463FD14BDE121000A44FE /* second@2x.png */,
-				7324642B14BDE4AB000A44FE /* MyAnnotation.m */,
-				7324642A14BDE4AB000A44FE /* MyAnnotation.h */,
-				730423B414C8E5910037E8E4 /* EditTable */,
 				732463E314BDE121000A44FE /* Supporting Files */,
+				733EEBC714CC1D3B004C6B5F /* TouchXML */,
+				7310F89614CC5BF400DE76B5 /* メモ */,
+				733EEB9914CC1C03004C6B5F /* 作業情報 */,
+				739E380914CD458B006AA739 /* 圃場マップ */,
 			);
 			path = "hojo!";
 			sourceTree = "<group>";
@@ -900,6 +914,9 @@
 				73F6C3BF14CD9E0D006F07B3 /* trend.png in Resources */,
 				73F6C3C014CD9E0D006F07B3 /* world.png in Resources */,
 				7303DE5714CDB41E00F20C5F /* MemberPickerController.xib in Resources */,
+				7350896314CE4D920097953D /* Default-Portrait~ipad.png in Resources */,
+				7350896514CE4D9E0097953D /* Icon-72.png in Resources */,
+				7392112014CEAD77004024A1 /* pestisideViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,6 +986,7 @@
 				7310F89A14CC5C2000DE76B5 /* MemoViewController.m in Sources */,
 				739E380E14CD45DB006AA739 /* MapDetailsViewController.m in Sources */,
 				7303DE5614CDB41E00F20C5F /* MemberPickerController.m in Sources */,
+				7392111F14CEAD77004024A1 /* pestisideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,8 +1089,10 @@
 				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "hojo!/hojo!-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				"OTHER_LDFLAGS[arch=*]" = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1085,8 +1105,10 @@
 				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
 				INFOPLIST_FILE = "hojo!/hojo!-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				"OTHER_LDFLAGS[arch=*]" = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -23,7 +23,6 @@
 @synthesize member;
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    //[locationManager stopUpdatingLocation];
     userLocationLat=newLocation.coordinate.latitude;
     userLocationLong=newLocation.coordinate.longitude;
     NSString *userLat=[[NSString alloc]initWithFormat:@"%lf",userLocationLat];
@@ -42,6 +41,7 @@
      }
      
      }];
+    [locationManager stopUpdatingLocation];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -124,9 +124,14 @@
     else if(cell.accessoryType==UITableViewCellAccessoryNone){
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
     }
-    
-    
-    
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (editingStyle == UITableViewCellEditingStyleDelete)
+	{
+		[self.member removeObjectAtIndex:indexPath.row];
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	}   
 }
 -(void)showLatitude:(NSString *)latitude showLongitude:(NSString *)longitude{
     MyReverseGeocoder *userLocation = [[MyReverseGeocoder alloc] initWithLatitude:latitude initWithLongitude:longitude];

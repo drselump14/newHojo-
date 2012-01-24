@@ -25,4 +25,5 @@
 
 -(IBAction)PickWorkTime:(id)sender;
 -(IBAction)SubmitTable:(id)sender;
+-(void)allDays:(id)sender;
 @end

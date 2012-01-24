@@ -1,21 +1,15 @@
 //
-//  WorkNameTableViewController.m
+//  pestisideViewController.m
 //  hojo!
 //
-//  Created by slamet kristanto on 1/18/12.
+//  Created by slamet kristanto on 1/24/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
 
-#import "WorkNameTableViewController.h"
-//#import "AppDelegate.h"
-#import "EditViewController.h"
+#import "pestisideViewController.h"
 
-
-@implementation WorkNameTableViewController{
-    NSArray *workNames;
-    NSUInteger selectedIndex;
-}
-@synthesize workName;
+@implementation pestisideViewController
+@synthesize pestisideArray;
 @synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,15 +34,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title=@"作業名";
-    WorkTable.delegate=self;
-    WorkTable.dataSource=self;
-    workNames=[NSArray arrayWithObjects:@"種まき",@"収穫",@"水やり",@"肥料散布",@"畝立て",@"定植",@"防除", @"もみすり"@"調整",@"選別",@"出荷",nil];
-    selectedIndex=[workNames indexOfObject:self.workName];
+    pestisideTable.delegate=self;
+    pestisideTable.dataSource=self;
+    pestisideArray=[[NSMutableArray alloc]initWithObjects:@"2,4-D",@"2,4,5-T",@"アクリナトリン", nil];
     // Do any additional setup after loading the view from its nib.
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [workNames count];
+    return [pestisideArray count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
@@ -56,7 +48,7 @@
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text=[workNames objectAtIndex:indexPath.row];
+    cell.textLabel.text=[pestisideArray objectAtIndex:indexPath.row];
     if (indexPath.row==selectedIndex) {
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
     } else {
@@ -73,17 +65,15 @@
     selectedIndex=indexPath.row;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType=UITableViewCellAccessoryCheckmark;
-    NSString *theWork=[workNames objectAtIndex:indexPath.row];
-    [delegate didReceiveWork:theWork];
+    NSString *thePest=[pestisideArray objectAtIndex:indexPath.row];
+    [delegate didreceivePestiside:thePest];
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    workName=nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
