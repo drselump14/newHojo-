@@ -17,10 +17,11 @@
 
 @end
 
-@interface DiaryViewController : UITableViewController<DiaryViewDelegate>
+@interface DiaryViewController : UITableViewController<DiaryViewDelegate,UIActionSheetDelegate>
 {
     NSMutableArray *players;
     EditViewController *editViewController;
+    int badgeNumber;
     
 }
 

@@ -44,6 +44,7 @@
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"送信" style:UIBarButtonItemStyleDone target:self action:@selector(SubmitTable:)];
     [self.navigationItem setLeftBarButtonItem:editButton];
     [self.navigationItem setRightBarButtonItem:submitButton];
+    badgeNumber=[players count];
     //selectedIndex = [member indexOfObject:self.member];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -64,8 +65,13 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    [UIApplication sharedApplication].applicationIconBadgeNumber = [players count];
-
+    [UIApplication sharedApplication].applicationIconBadgeNumber = badgeNumber;
+    NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
+    if (badgeNumber==0) {
+        self.navigationController.tabBarItem.badgeValue=nil;
+    } else {
+        self.navigationController.tabBarItem.badgeValue=myBadgeValue;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -107,14 +113,24 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
 	if (editingStyle == UITableViewCellEditingStyleDelete)
 	{
 		[self.players removeObjectAtIndex:indexPath.row];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        if ([UIApplication sharedApplication].applicationIconBadgeNumber>0) {
-            [UIApplication sharedApplication].applicationIconBadgeNumber--;
-        }
+        if (cell.accessoryType==UITableViewCellAccessoryNone) {
+            if ([UIApplication sharedApplication].applicationIconBadgeNumber>0) {
+                [UIApplication sharedApplication].applicationIconBadgeNumber--;
+                badgeNumber=badgeNumber-1;
+                NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
+                if (badgeNumber==0) {
+                    self.navigationController.tabBarItem.badgeValue=nil;
+                } else {
+                    self.navigationController.tabBarItem.badgeValue=myBadgeValue;
+                }
+            }
 
+        }
 	}   
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -173,27 +189,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    
-      //tes *detailViewController = [[tes alloc] initWithNibName:@"tes" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     //[self.navigationController pushViewController:detailViewController animated:YES];
-    //[self performSegueWithIdentifier:@"SegueToEdit"  sender:self];
-    /*[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (selectedIndex != NSNotFound) {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    selectedIndex = indexPath.row;*/
     UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
     if (cell.accessoryType==UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
         [UIApplication sharedApplication].applicationIconBadgeNumber++;
+        badgeNumber=badgeNumber+1;
+        NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
+        if (badgeNumber==0) {
+            self.navigationController.tabBarItem.badgeValue=nil;
+        } else {
+            self.navigationController.tabBarItem.badgeValue=myBadgeValue;
+        }
+        
     }
     else if(cell.accessoryType==UITableViewCellAccessoryNone){
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
         [UIApplication sharedApplication].applicationIconBadgeNumber--;
+        badgeNumber=badgeNumber-1;
+        NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
+        if (badgeNumber==0) {
+            self.navigationController.tabBarItem.badgeValue=nil;
+        } else {
+            self.navigationController.tabBarItem.badgeValue=myBadgeValue;
+        }
     }
 
     
@@ -260,11 +278,20 @@
     }
 }
 -(IBAction)SubmitTable:(id)sender{
-    UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"hojo!" message:@"保存してもよろしいですか？" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    /*UIActionSheet *submitConfirmation=[[UIActionSheet alloc] initWithTitle:@"サーバーに送信してもよろしいですか？" delegate:self cancelButtonTitle:@"キャンセル" destructiveButtonTitle:nil otherButtonTitles: @"保存",nil];
-    [submitConfirmation showInView:self.view];*/
+    if (badgeNumber!=0) {
+        NSString *alertMessage=[[NSString alloc]initWithFormat:@"%dつの項目がチェックされていないが、保存してもよろしいですか",badgeNumber];
+        UIActionSheet *pictActionSheet=[[UIActionSheet alloc]initWithTitle:alertMessage delegate:self cancelButtonTitle:@"キャンセル" destructiveButtonTitle:@"サーバーに送信" otherButtonTitles:nil];
+        pictActionSheet.delegate=self;
+        [pictActionSheet showInView:self.parentViewController.tabBarController.view];
+    }
+    else{
+        NSString *alertMessage=[[NSString alloc]initWithString:@"保存してもよろしいですか"];
+        UIActionSheet *pictActionSheet=[[UIActionSheet alloc]initWithTitle:alertMessage delegate:self cancelButtonTitle:@"キャンセル" destructiveButtonTitle:nil otherButtonTitles:@"サーバーに送信",nil];
+        pictActionSheet.delegate=self;
+        [pictActionSheet showInView:self.parentViewController.tabBarController.view];
+    }
 }
+
 -(IBAction)AddTable:(id)sender{
     /*AddDiaryViewController *detailViewController = [[AddDiaryViewController alloc] initWithNibName:@"AddDiaryViewController" bundle:nil];
     // ...
@@ -283,6 +310,7 @@
 	[self.tableView insertRowsAtIndexPaths:
      [NSArray arrayWithObject:indexPath] 
                           withRowAnimation:UITableViewRowAnimationAutomatic];
+    badgeNumber=badgeNumber+1;
 }
 -(void)didEditPlayer:(Player *)player editRow:(NSInteger)row{
     [self.players replaceObjectAtIndex:row withObject:player];
