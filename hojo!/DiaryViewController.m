@@ -139,10 +139,25 @@
     DiaryCell *cell = (DiaryCell *)[tableView 
                                       dequeueReusableCellWithIdentifier:@"DiaryCell"];
 	Player *player = [self.players objectAtIndex:indexPath.row];
-    NSString *topLabel=[[NSString alloc]initWithFormat:@"%@(%@)",player.workName,player.crop];
-    NSString *bottomLabel=[[NSString alloc]initWithFormat:@"%@(%@~%@)",player.hojo,player.startTime,player.finishTime];
-	cell.textLabel.text = topLabel;
-	cell.detailTextLabel.text = bottomLabel;
+    if ([player.workName isEqualToString:@"防除"]) {
+        NSString *topLabel=[[NSString alloc]initWithFormat:@"%@(%@)",player.workName,player.crop];
+        NSString *bottomLabel=[[NSString alloc]initWithFormat:@"%@(%@~%@) %@(%@/%@)",player.hojo,player.startTime,player.finishTime,player.pestiside,player.pestisideVolume,player.pestisideDilution];
+        cell.textLabel.text = topLabel;
+        cell.detailTextLabel.text = bottomLabel;
+    }
+    else if([player.workName isEqualToString:@"収穫"]){
+        NSString *topLabel=[[NSString alloc]initWithFormat:@"%@(%@)",player.workName,player.crop];
+        NSString *bottomLabel=[[NSString alloc]initWithFormat:@"%@(%@~%@) %@",player.hojo,player.startTime,player.finishTime,player.CarrierCount];
+        cell.textLabel.text = topLabel;
+        cell.detailTextLabel.text = bottomLabel;
+    }
+    else {
+        NSString *topLabel=[[NSString alloc]initWithFormat:@"%@(%@)",player.workName,player.crop];
+        NSString *bottomLabel=[[NSString alloc]initWithFormat:@"%@(%@~%@)",player.hojo,player.startTime,player.finishTime];
+        cell.textLabel.text = topLabel;
+        cell.detailTextLabel.text = bottomLabel;
+    }
+	
     return cell;
 }
 
@@ -230,18 +245,11 @@
 }*/
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    /*UIAlertView *alert =[[UIAlertView alloc]initWithTitle:@"tes" message:@"tes juga" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];*/
-    /*MemberPickerViewController *detailViewController=[[MemberPickerViewController alloc]initWithNibName:@"MemberPickerViewController" bundle:nil];
-    [self.navigationController pushViewController:detailViewController animated:YES];*/
     if (self.editViewController==nil) {
         EditViewController *detailViewController = [[EditViewController alloc] initWithNibName:@"EditViewController" bundle:nil];
         self.editViewController=detailViewController;
     }
     editViewController.delegate=self;
-    // ...
-    // Pass the selected object to the new view controller.
-    //UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
     Player *editPlayer=[[Player alloc] init];
     editPlayer=[self.players objectAtIndex:indexPath.row];
     editViewController.editTableSignal=@"edit";
@@ -251,6 +259,15 @@
     editViewController.workPlaceString=editPlayer.hojo;
     editViewController.startTimeString=editPlayer.startTime;
     editViewController.finishTimeString=editPlayer.finishTime;
+    if ([editPlayer.workName isEqualToString:@"防除"]) {
+        editViewController.pestiside=editPlayer.pestiside;
+        editViewController.pestVolume=editPlayer.pestisideVolume;
+        editViewController.pestDilution=editPlayer.pestisideDilution;
+        NSLog(@"%@",editPlayer.workName);
+    } else if([editPlayer.workName isEqualToString:@"収穫"]) {
+        editViewController.carrierString=editPlayer.CarrierCount;
+        NSLog(@"%@",editPlayer.workName);
+    }
     [self.navigationController pushViewController:self.editViewController animated:YES];
 }
 

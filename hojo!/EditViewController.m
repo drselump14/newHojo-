@@ -24,6 +24,7 @@
 @synthesize editTableRow;
 @synthesize delegate;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,8 +47,12 @@
     if (editTableSignal!=@"edit") {
         self.title=@"作業項目を追加";
     }
-    else
+    else{
         self.title=@"作業項目を編集";
+        [dilutionLabel setText:pestDilution];
+        [carrierLabel setText:carrierString];
+
+    }
 }
 
 #pragma mark - View lifecycle
@@ -55,6 +60,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    dilutionLabel.textColor=[UIColor colorWithRed:0.22 green:0.33 blue:0.53 alpha:1.0];
+    dilutionLabel.font=[UIFont fontWithName:@"System" size:17];
+    carrierLabel.textColor=[UIColor colorWithRed:0.22 green:0.33 blue:0.53 alpha:1.0];
+    carrierLabel.font=[UIFont fontWithName:@"System" size:17];
     editTable.dataSource=self;
     editTable.delegate=self;
     Label1=[NSArray arrayWithObjects:@"作業名",@"農作物",@"作業場",@"作業時間",nil];
@@ -130,7 +139,8 @@
         if ([workName isEqualToString:@"防除"]) {
             cell.textLabel.text=[Label2 objectAtIndex:indexPath.row];
             if(indexPath.row==2){
-                cell.detailTextLabel.text=pestDilution;
+                //cell.detailTextLabel.text=pestDilution;
+                return dilutionCell;
             }
             else if(indexPath.row==1){
                 cell.detailTextLabel.text=pestVolume;
@@ -143,15 +153,13 @@
 
         }
         else if([workName isEqualToString:@"収穫"]){
-            cell.textLabel.text=[Label3 objectAtIndex:indexPath.row];
-            cell.detailTextLabel.text=carrierString;
+            return carrierCell;
         }
         else{
             cell.hidden=YES;
         }
     }
     return cell;
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -198,10 +206,10 @@
                 pestisideView.delegate=self;
                 [self.navigationController pushViewController:pestisideView animated:YES];
             } else {
-                UIAlertView *carrierInput=[[UIAlertView alloc]initWithTitle:@"キャリー数" message:@"キャリー数を入れてください" delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"キャリー数を挿入", nil];
+                /*UIAlertView *carrierInput=[[UIAlertView alloc]initWithTitle:@"キャリー数" message:@"キャリー数を入れてください" delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"キャリー数を挿入", nil];
                 carrierInput.alertViewStyle=UIAlertViewStylePlainTextInput;
                 //UITextField *emailField=[[UITextField alloc]init];
-                [carrierInput show];
+                [carrierInput show];*/
             }
         }
         else if(indexPath.row==1){
@@ -234,6 +242,14 @@
         player.hojo=workPlaceString;
         player.startTime=startTimeString;
         player.finishTime=finishTimeString;
+        if ([workName isEqualToString:@"防除"]) {
+            player.pestiside=pestiside;
+            player.pestisideVolume=pestVolume;
+            player.pestisideDilution=pestDilution;
+        }
+        else if([workName isEqualToString:@"収穫"]){
+            player.CarrierCount=carrierString;
+        }
         [delegate didAddPlayer:player];
     }
     else{
@@ -243,12 +259,23 @@
         player.hojo=workPlaceString;
         player.startTime=startTimeString;
         player.finishTime=finishTimeString;
+        if ([workName isEqualToString:@"防除"]) {
+            player.pestiside=pestiside;
+            player.pestisideVolume=pestVolume;
+            player.pestisideDilution=pestDilution;
+        }
+        else if([workName isEqualToString:@"収穫"]){
+            player.CarrierCount=carrierString;
+        }
+
         NSInteger row=editTableRow;
         [delegate didEditPlayer:player editRow:row];
     }
     [self.navigationController popViewControllerAnimated:YES];
 
 }
+
+//delegate method
 -(void)didReceiveWork:(NSString *)work{
     workName=work;
     //NSIndexPath *indexPath = [[NSIndexPath alloc] init];
@@ -277,6 +304,22 @@
     pestVolume=pestVol;
     [editTable reloadData];
 }
+
+
+///
+-(IBAction)changeDilution:(id)sender{
+    pestDilution=[NSString stringWithFormat:@"%1.1lf倍",dilutionSlider.value];
+    [dilutionLabel setText:pestDilution];
+    NSLog(@"%@",pestDilution);
+}
+-(IBAction)changeCarrier:(id)sender{
+    carrierString=[NSString stringWithFormat:@"%.0f箱",carrierStepper.value];
+    [carrierLabel setText:carrierString];
+    NSLog(@"%@",carrierString);
+    
+}
+
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

@@ -15,5 +15,9 @@
 @synthesize hojo;
 @synthesize startTime;
 @synthesize finishTime;
+@synthesize pestiside;
+@synthesize pestisideVolume;
+@synthesize pestisideDilution;
+@synthesize CarrierCount;
 
 @end

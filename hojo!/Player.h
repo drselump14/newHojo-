@@ -15,5 +15,9 @@
 @property (nonatomic,copy) NSString *hojo;
 @property (nonatomic,copy) NSString *startTime;
 @property (nonatomic,copy) NSString *finishTime;
+@property (nonatomic,copy) NSString *pestiside;
+@property (nonatomic,copy) NSString *pestisideVolume;
+@property (nonatomic,copy) NSString *pestisideDilution;
+@property (nonatomic,copy) NSString *CarrierCount;
 
 @end

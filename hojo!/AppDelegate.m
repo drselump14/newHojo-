@@ -34,6 +34,7 @@
     player.hojo=@"圃場B";
     player.startTime=@"09:30";
     player.finishTime=@"10:30";
+    player.CarrierCount=@"10箱";
     [players addObject:player];
     player=[[Player alloc] init];
     player.workName=@"防除";
@@ -41,6 +42,9 @@
     player.hojo=@"圃場A";
     player.startTime=@"10:30";
     player.finishTime=@"11:30";
+    player.pestiside=@"2,4-D";
+    player.pestisideVolume=@"10mL";
+    player.pestisideDilution=@"5倍";
     [players addObject:player];
     UITabBarController *tabBarController = 
     (UITabBarController *)self.window.rootViewController;
