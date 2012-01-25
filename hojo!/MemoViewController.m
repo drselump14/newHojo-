@@ -8,6 +8,8 @@
 
 #import "MemoViewController.h"
 
+const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0x54, 0x4d, 0x92, 0x80, 0x8c, 0x05, 0xbe, 0xec, 0xb7, 0xda, 0xcc, 0xc1, 0x03, 0x06, 0xe2, 0xfa, 0x42, 0x30, 0x16, 0xbd, 0x9d, 0x45, 0xf5, 0xa1, 0x0e, 0x31, 0x2e, 0x27, 0x78, 0x38, 0x78, 0xcc, 0x85, 0x0a, 0x4c, 0x11, 0x0f, 0x0b, 0xfe, 0xc7, 0xe5, 0xca, 0x88, 0xe9, 0xd0, 0x6a, 0xe3, 0x12, 0x9a, 0xf9, 0xcf, 0x37, 0x3e, 0xc5, 0xd9, 0x4c, 0xf6, 0x07, 0x73};
+
 @implementation MemoViewController
 @synthesize recordButton,playButton,stopButton;
 
@@ -46,7 +48,20 @@
     playButton.enabled = NO;
     stopButton.enabled = NO;
     memoTextView.delegate=self;
-    
+    [SpeechKit setupWithID:@"NMDPTRIAL_botoks20111030234755"
+                      host:@"sandbox.nmdp.nuancemobility.net"
+                      port:443
+                    useSSL:NO
+                  delegate:nil];   
+    SKEarcon* earconStart	= [SKEarcon earconWithName:@"earcon_listening.wav"];
+	SKEarcon* earconStop	= [SKEarcon earconWithName:@"earcon_done_listening.wav"];
+	SKEarcon* earconCancel	= [SKEarcon earconWithName:@"earcon_cancel.wav"];
+	
+	[SpeechKit setEarcon:earconStart forType:SKStartRecordingEarconType];
+	[SpeechKit setEarcon:earconStop forType:SKStopRecordingEarconType];
+	[SpeechKit setEarcon:earconCancel forType:SKCancelRecordingEarconType];
+
+    //vocalizer = [[SKVocalizer alloc] initWithLanguage:@"ja_JP"delegate:self];
     NSArray *dirPaths;
     NSString *docsDir;
     
@@ -148,13 +163,20 @@
 }
 -(void) recordAudio
 {
-    if (!audioRecorder.recording)
-    {
+    if (transactionState == TS_RECORDING) {
+        [recognizer stopRecording];
+    }
+    else if (transactionState == TS_IDLE) {
         playButton.enabled = NO;
         stopButton.enabled = YES;
         stopButton.highlighted=YES;
         NSLog(@"録音が始まる");
-        [audioRecorder record];
+        //[audioRecorder record];
+        recognizer = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType
+                                              detection:SKLongEndOfSpeechDetection
+                                               language:@"ja_JP"
+                                               delegate:self];
+
     }
 }
 -(void)stop
@@ -221,6 +243,81 @@
                                   error:(NSError *)error
 {
     NSLog(@"Encode Error occurred");
+}
+#pragma mark -
+#pragma mark SKRecognizerDelegate methods
+
+- (void)recognizerDidBeginRecording:(SKRecognizer *)recognizer
+{
+    NSLog(@"Recording started.");
+    //[vocalizer speakString:@"録音開始"];
+    transactionState = TS_RECORDING;
+    [recordButton setTitle:@"録音中..." forState:UIControlStateNormal];
+}
+
+- (void)recognizerDidFinishRecording:(SKRecognizer *)recognizer
+{
+    NSLog(@"Recording finished.");
+    //[vocalizer speakString:@"録音終了"];
+    transactionState = TS_PROCESSING;
+    [recordButton setTitle:@"処理中" forState:UIControlStateNormal];
+}
+
+- (void)recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results
+{
+    NSLog(@"Got results.");
+    
+    long numOfResults = [results.results count];
+    
+    transactionState = TS_IDLE;
+    [recordButton setTitle:@"音声" forState:UIControlStateNormal];
+    
+    if (numOfResults > 0)
+        memoTextView.text = [results firstResult];
+    
+	if (numOfResults > 1) 
+		memoTextView.text = [[results.results subarrayWithRange:NSMakeRange(1, numOfResults-1)] componentsJoinedByString:@"\n"];
+    
+    if (results.suggestion) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Suggestion"
+                                                        message:results.suggestion
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];        
+        [alert show];
+        
+    }
+    
+	//[voiceSearch release];
+	self->recognizer = nil;
+}
+
+- (void)recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion
+{
+    NSLog(@"Got error.");
+    
+    transactionState = TS_IDLE;
+    [recordButton setTitle:@"音声" forState:UIControlStateNormal];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:[error localizedDescription]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];        
+    [alert show];
+    
+    if (suggestion) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Suggestion"
+                                                        message:suggestion
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];        
+        [alert show];
+        
+        
+    }
+    
+    //voiceSearch = nil;
 }
 
 - (void)viewDidUnload

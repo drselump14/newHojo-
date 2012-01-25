@@ -82,6 +82,14 @@
 		733EEBC414CC1C86004C6B5F /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB314CC1C86004C6B5F /* CXMLNode_XPathExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		733EEBC514CC1C86004C6B5F /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB514CC1C86004C6B5F /* CXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB814CC1C86004C6B5F /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7346CAB914D0386E0029A7A4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346CAB814D0386E0029A7A4 /* AudioToolbox.framework */; };
+		7346CABC14D038D00029A7A4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346CABB14D038D00029A7A4 /* SystemConfiguration.framework */; };
+		7346CABE14D03A180029A7A4 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346CABD14D03A180029A7A4 /* SpeechKit.framework */; };
+		7346CAC614D03F6E0029A7A4 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7346CAC314D03F6E0029A7A4 /* earcon_cancel.wav */; };
+		7346CAC714D03F6E0029A7A4 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7346CAC414D03F6E0029A7A4 /* earcon_done_listening.wav */; };
+		7346CAC814D03F6E0029A7A4 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7346CAC514D03F6E0029A7A4 /* earcon_listening.wav */; };
+		7346CACA14D047CE0029A7A4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346CAC914D047CE0029A7A4 /* CFNetwork.framework */; };
+		7346CACC14D048050029A7A4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346CACB14D048050029A7A4 /* Security.framework */; };
 		7350896314CE4D920097953D /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896214CE4D920097953D /* Default-Portrait~ipad.png */; };
 		7350896514CE4D9E0097953D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896414CE4D9E0097953D /* Icon-72.png */; };
 		7350DFB814CFA4C9004AB2A7 /* VolumeInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */; };
@@ -286,6 +294,14 @@
 		733EEBB714CC1C86004C6B5F /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		733EEBB814CC1C86004C6B5F /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		733EEBB914CC1C86004C6B5F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		7346CAB814D0386E0029A7A4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7346CABB14D038D00029A7A4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7346CABD14D03A180029A7A4 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechKit.framework; sourceTree = "<group>"; };
+		7346CAC314D03F6E0029A7A4 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
+		7346CAC414D03F6E0029A7A4 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_done_listening.wav; sourceTree = "<group>"; };
+		7346CAC514D03F6E0029A7A4 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_listening.wav; sourceTree = "<group>"; };
+		7346CAC914D047CE0029A7A4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7346CACB14D048050029A7A4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7350896214CE4D920097953D /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		7350896414CE4D9E0097953D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		7350DFB514CFA4C9004AB2A7 /* VolumeInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeInputViewController.h; sourceTree = "<group>"; };
@@ -386,6 +402,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7346CACC14D048050029A7A4 /* Security.framework in Frameworks */,
+				7346CACA14D047CE0029A7A4 /* CFNetwork.framework in Frameworks */,
+				7346CABC14D038D00029A7A4 /* SystemConfiguration.framework in Frameworks */,
+				7346CAB914D0386E0029A7A4 /* AudioToolbox.framework in Frameworks */,
 				739E380014CD1890006AA739 /* CoreAudio.framework in Frameworks */,
 				739E37FD14CD1882006AA739 /* AVFoundation.framework in Frameworks */,
 				7324641F14BDE325000A44FE /* MapKit.framework in Frameworks */,
@@ -393,6 +413,7 @@
 				732463DD14BDE121000A44FE /* UIKit.framework in Frameworks */,
 				732463DF14BDE121000A44FE /* Foundation.framework in Frameworks */,
 				732463E114BDE121000A44FE /* CoreGraphics.framework in Frameworks */,
+				7346CABE14D03A180029A7A4 /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +526,11 @@
 		732463DB14BDE121000A44FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7346CACB14D048050029A7A4 /* Security.framework */,
+				7346CAC914D047CE0029A7A4 /* CFNetwork.framework */,
+				7346CABD14D03A180029A7A4 /* SpeechKit.framework */,
+				7346CABB14D038D00029A7A4 /* SystemConfiguration.framework */,
+				7346CAB814D0386E0029A7A4 /* AudioToolbox.framework */,
 				739E37FF14CD1890006AA739 /* CoreAudio.framework */,
 				739E37FC14CD1882006AA739 /* AVFoundation.framework */,
 				7324641E14BDE325000A44FE /* MapKit.framework */,
@@ -558,6 +584,9 @@
 		732463E314BDE121000A44FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7346CAC314D03F6E0029A7A4 /* earcon_cancel.wav */,
+				7346CAC414D03F6E0029A7A4 /* earcon_done_listening.wav */,
+				7346CAC514D03F6E0029A7A4 /* earcon_listening.wav */,
 				7308696414C9BD35004E8224 /* Images */,
 				732463E414BDE121000A44FE /* hojo!-Info.plist */,
 				732463E514BDE121000A44FE /* InfoPlist.strings */,
@@ -926,6 +955,9 @@
 				7350896514CE4D9E0097953D /* Icon-72.png in Resources */,
 				7392112014CEAD77004024A1 /* pestisideViewController.xib in Resources */,
 				7350DFB914CFA4C9004AB2A7 /* VolumeInputViewController.xib in Resources */,
+				7346CAC614D03F6E0029A7A4 /* earcon_cancel.wav in Resources */,
+				7346CAC714D03F6E0029A7A4 /* earcon_done_listening.wav in Resources */,
+				7346CAC814D03F6E0029A7A4 /* earcon_listening.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,6 +1127,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
@@ -1111,6 +1147,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hojo!/hojo!-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = /usr/include/libxml2;
