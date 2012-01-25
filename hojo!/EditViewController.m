@@ -14,6 +14,7 @@
 #import "DiaryViewController.h"
 #import "Player.h"
 #import "pestisideViewController.h"
+#import "VolumeInputViewController.h"
 
 @implementation EditViewController
 @synthesize Label1,Label2,Label3;
@@ -133,6 +134,8 @@
             }
             else if(indexPath.row==1){
                 cell.detailTextLabel.text=pestVolume;
+
+                
             }
             else{
                 cell.detailTextLabel.text=pestiside;
@@ -195,15 +198,32 @@
                 pestisideView.delegate=self;
                 [self.navigationController pushViewController:pestisideView animated:YES];
             } else {
-                
+                UIAlertView *carrierInput=[[UIAlertView alloc]initWithTitle:@"キャリー数" message:@"キャリー数を入れてください" delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"キャリー数を挿入", nil];
+                carrierInput.alertViewStyle=UIAlertViewStylePlainTextInput;
+                //UITextField *emailField=[[UITextField alloc]init];
+                [carrierInput show];
             }
         }
         else if(indexPath.row==1){
-            
+            if ([workName isEqualToString:@"防除"]) {
+                VolumeInputViewController *volumeInputView=[[VolumeInputViewController alloc]initWithNibName:@"VolumeInputViewController" bundle:nil];
+                volumeInputView.delegate=self;
+                [self.navigationController pushViewController:volumeInputView animated:YES];
+            }
         }
         else {
             
         }
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *title=[alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"キャリー数を挿入"]) {
+        UITextField *carrierInput=[alertView textFieldAtIndex:0];
+        //carrierInput.keyboardType=UIKeyboardTypeEmailAddress;
+        carrierString=carrierInput.text;
+        NSLog(@"%@",carrierString);
+        [editTable reloadData];
     }
 }
 -(IBAction)saveDiary:(id)sender{
@@ -251,6 +271,10 @@
 }
 -(void)didreceivePestiside:(NSString *)pest{
     pestiside=pest;
+    [editTable reloadData];
+}
+-(void)didreceivePestisideVolume:(NSString *)pestVol{
+    pestVolume=pestVol;
     [editTable reloadData];
 }
 - (void)viewDidUnload

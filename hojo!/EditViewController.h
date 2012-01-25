@@ -16,12 +16,13 @@
 -(void)didReceiveWorkPlace:(NSString *)workPlace;
 -(void)didReceiveCrop:(NSString *)crop;
 -(void)didreceivePestiside:(NSString *)pest;
+-(void)didreceivePestisideVolume:(NSString *)pestVol;
 
 @end
 
 @protocol DiaryViewDelegate;
 
-@interface EditViewController : UIViewController<EditViewDelegate, UITableViewDelegate,UITableViewDataSource>{
+@interface EditViewController : UIViewController<EditViewDelegate, UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>{
     id<DiaryViewDelegate> delegate;
     TakeHojoFromMap *takeHojoFromMap;
     IBOutlet UITableView *editTable;
@@ -30,6 +31,7 @@
     NSString *startTimeString,*finishTimeString;
     NSString *editTableSignal;
     NSInteger editTableRow;
+    IBOutlet UIStepper *mySteppr;
     
 }
 @property (nonatomic,strong) NSMutableArray *Label1,*Label2,*Label3;

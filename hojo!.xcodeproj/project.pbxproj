@@ -84,6 +84,8 @@
 		733EEBC614CC1C86004C6B5F /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 733EEBB814CC1C86004C6B5F /* CTidy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7350896314CE4D920097953D /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896214CE4D920097953D /* Default-Portrait~ipad.png */; };
 		7350896514CE4D9E0097953D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896414CE4D9E0097953D /* Icon-72.png */; };
+		7350DFB814CFA4C9004AB2A7 /* VolumeInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */; };
+		7350DFB914CFA4C9004AB2A7 /* VolumeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350DFB714CFA4C9004AB2A7 /* VolumeInputViewController.xib */; };
 		739110D314C8413400BC3595 /* CropsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739110D114C8413400BC3595 /* CropsTableViewController.m */; };
 		739110D414C8413400BC3595 /* CropsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739110D214C8413400BC3595 /* CropsTableViewController.xib */; };
 		7391111C14C86D5800BC3595 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7391111A14C86D5700BC3595 /* EditViewController.m */; };
@@ -286,6 +288,9 @@
 		733EEBB914CC1C86004C6B5F /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		7350896214CE4D920097953D /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		7350896414CE4D9E0097953D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		7350DFB514CFA4C9004AB2A7 /* VolumeInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeInputViewController.h; sourceTree = "<group>"; };
+		7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeInputViewController.m; sourceTree = "<group>"; };
+		7350DFB714CFA4C9004AB2A7 /* VolumeInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VolumeInputViewController.xib; sourceTree = "<group>"; };
 		739110D014C8413400BC3595 /* CropsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropsTableViewController.h; sourceTree = "<group>"; };
 		739110D114C8413400BC3595 /* CropsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropsTableViewController.m; sourceTree = "<group>"; };
 		739110D214C8413400BC3595 /* CropsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropsTableViewController.xib; sourceTree = "<group>"; };
@@ -425,6 +430,9 @@
 				7392111C14CEAD77004024A1 /* pestisideViewController.h */,
 				7392111D14CEAD77004024A1 /* pestisideViewController.m */,
 				7392111E14CEAD77004024A1 /* pestisideViewController.xib */,
+				7350DFB514CFA4C9004AB2A7 /* VolumeInputViewController.h */,
+				7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */,
+				7350DFB714CFA4C9004AB2A7 /* VolumeInputViewController.xib */,
 			);
 			name = EditTable;
 			sourceTree = "<group>";
@@ -528,7 +536,6 @@
 				732463F614BDE121000A44FE /* first@2x.png */,
 				732463F114BDE121000A44FE /* FirstViewController.h */,
 				732463F214BDE121000A44FE /* FirstViewController.m */,
-				7308696414C9BD35004E8224 /* Images */,
 				730A2C1514BEB53000B472B1 /* Location.gpx */,
 				732463EE14BDE121000A44FE /* MainStoryboard.storyboard */,
 				73BF2A0214C158E900D5A151 /* MemberPickerViewController.h */,
@@ -551,6 +558,7 @@
 		732463E314BDE121000A44FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7308696414C9BD35004E8224 /* Images */,
 				732463E414BDE121000A44FE /* hojo!-Info.plist */,
 				732463E514BDE121000A44FE /* InfoPlist.strings */,
 				732463E814BDE121000A44FE /* main.m */,
@@ -917,6 +925,7 @@
 				7350896314CE4D920097953D /* Default-Portrait~ipad.png in Resources */,
 				7350896514CE4D9E0097953D /* Icon-72.png in Resources */,
 				7392112014CEAD77004024A1 /* pestisideViewController.xib in Resources */,
+				7350DFB914CFA4C9004AB2A7 /* VolumeInputViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,6 +996,7 @@
 				739E380E14CD45DB006AA739 /* MapDetailsViewController.m in Sources */,
 				7303DE5614CDB41E00F20C5F /* MemberPickerController.m in Sources */,
 				7392111F14CEAD77004024A1 /* pestisideViewController.m in Sources */,
+				7350DFB814CFA4C9004AB2A7 /* VolumeInputViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

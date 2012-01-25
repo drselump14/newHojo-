@@ -23,13 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "hojo!/EditViewController.m"
-         timestampString = "349091156.874808"
+         timestampString = "349166572.65691"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "269"
-         endingLineNumber = "269"
-         landmarkName = "@implementation EditViewController"
-         landmarkType = "3">
+         startingLineNumber = "300"
+         endingLineNumber = "300">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
