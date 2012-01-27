@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 #import "EditViewController.h"
+#import "SBJson.h"
 
 @protocol DiaryViewDelegate <NSObject>
 
@@ -22,10 +23,11 @@
     NSMutableArray *players;
     EditViewController *editViewController;
     int badgeNumber;
-    
+    NSMutableData *responseData;
 }
 
 @property (nonatomic, strong) NSMutableArray *players;
+@property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic,retain) EditViewController *editViewController;
 
 -(IBAction)EditTable:(id)sender;

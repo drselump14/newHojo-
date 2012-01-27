@@ -12,11 +12,13 @@
 #import "MemberPickerViewController.h"
 #import "EditViewController.h"
 #import "AddDiaryViewController.h"
+#import "SBJson.h"
 
 @implementation DiaryViewController
 
 @synthesize players;
 @synthesize editViewController;
+@synthesize responseData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,7 +38,51 @@
 }
 
 #pragma mark - View lifecycle
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    [responseData setLength:0];
+}
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	self.responseData = nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	self.responseData = nil;
+	NSLog(@"JSONsuccess");
+	NSArray* latestLoans = (NSArray*)[responseString JSONValue] ;
+    int i;
+    for (i=0; i<[latestLoans count]; i++) {
+        NSString *workNameJSON=[[latestLoans objectAtIndex:i]objectForKey:@"workname"];
+        NSString *crop=[[latestLoans objectAtIndex:i]objectForKey:@"crop"];
+        NSString *area=[[latestLoans objectAtIndex:i]objectForKey:@"area"];
+        NSString *startTime1=[[latestLoans objectAtIndex:i]objectForKey:@"time11"];
+        NSString *startTime2=[[latestLoans objectAtIndex:i]objectForKey:@"time12"];
+        NSString *finishTime1=[[latestLoans objectAtIndex:i]objectForKey:@"time21"];
+        NSString *finishTime2=[[latestLoans objectAtIndex:i]objectForKey:@"tiem22"];
+       // NSLog(@"%@",workNameJSON);
+        //choose a random loan
+        if ([startTime1 integerValue]<10||[startTime2 integerValue]<10||[finishTime1 integerValue]<10||[finishTime2 integerValue]<10) {
+            startTime1=[NSString stringWithFormat:@"0%@",startTime1];
+            startTime2=[NSString stringWithFormat:@"0%@",startTime2];
+            finishTime1=[NSString stringWithFormat:@"0%@",finishTime1];
+            finishTime2=[NSString stringWithFormat:@"0%@",finishTime2];
+        } 
+        Player *player =[[Player alloc] init];
+        player.workName=workNameJSON;
+        player.crop=crop;
+        player.hojo=area;
+        player.startTime=[[NSString alloc]initWithFormat:@"%@:%@",startTime1,startTime2];
+        player.finishTime=[[NSString alloc]initWithFormat:@"%@:%@",finishTime1,finishTime2];
+        [players addObject:player];
+    }
+    [self.tableView reloadData];
+	//fetch the data
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,6 +91,37 @@
     [self.navigationItem setLeftBarButtonItem:editButton];
     [self.navigationItem setRightBarButtonItem:submitButton];
     badgeNumber=[players count];
+    players =[NSMutableArray arrayWithCapacity:20];
+    self.responseData = [NSMutableData data];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.137.228.50/workers/1/onedays.json"]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    /*Player *player =[[Player alloc] init];
+    player.workName=@"種まき";
+    player.crop=@"キャベツ";
+    player.hojo=@"圃場A";
+    player.startTime=@"08:30";
+    player.finishTime=@"09:30";
+    [players addObject:player];
+    player=[[Player alloc] init];
+    player.workName=@"収穫";
+    player.crop=@"タマネギ";
+    player.hojo=@"圃場B";
+    player.startTime=@"09:30";
+    player.finishTime=@"10:30";
+    player.CarrierCount=@"10箱";
+    [players addObject:player];
+    player=[[Player alloc] init];
+    player.workName=@"防除";
+    player.crop=@"レタス";
+    player.hojo=@"圃場A";
+    player.startTime=@"10:30";
+    player.finishTime=@"11:30";
+    player.pestiside=@"2,4-D";
+    player.pestisideVolume=@"10mL";
+    player.pestisideDilution=@"5倍";
+    [players addObject:player];*/
+
     //selectedIndex = [member indexOfObject:self.member];
 
     // Uncomment the following line to preserve selection between presentations.

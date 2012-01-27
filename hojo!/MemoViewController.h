@@ -14,6 +14,7 @@
     IBOutlet UITextView *memoTextView;
     IBOutlet UIButton *fotoButton,*recordButton,*saveButton;
     IBOutlet UIImageView *imageView;
+    UIImage *attachmentPict;
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
     UIButton *playButton;
@@ -39,6 +40,7 @@
 -(IBAction)showActionSheet:(id)sender;
 -(IBAction)takePicture;
 -(IBAction)pictureFromLibrary;
+-(IBAction)viewAttachment:(id)sender;
 
 -(IBAction)textFieldReturn:(id)sender;
 -(IBAction)backgroundTouched:(id)sender;

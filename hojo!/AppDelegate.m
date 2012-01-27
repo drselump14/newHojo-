@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    workData=[[NSString alloc]initWithString:@"種まき"];
+    /*workData=[[NSString alloc]initWithString:@"種まき"];
     players =[NSMutableArray arrayWithCapacity:20];
     Player *player =[[Player alloc] init];
     player.workName=@"種まき";
@@ -52,7 +52,7 @@
     [[tabBarController viewControllers] objectAtIndex:0];
 	DiaryViewController *playersViewController = 
     [[navigationController viewControllers] objectAtIndex:0];
-	playersViewController.players = players;
+	playersViewController.players = players;*/
     // Override point for customization after application launch.
     return YES;
 }

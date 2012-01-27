@@ -7,6 +7,7 @@
 //
 
 #import "MemoViewController.h"
+#import "MemoAttachmentFile.h"
 
 const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0x54, 0x4d, 0x92, 0x80, 0x8c, 0x05, 0xbe, 0xec, 0xb7, 0xda, 0xcc, 0xc1, 0x03, 0x06, 0xe2, 0xfa, 0x42, 0x30, 0x16, 0xbd, 0x9d, 0x45, 0xf5, 0xa1, 0x0e, 0x31, 0x2e, 0x27, 0x78, 0x38, 0x78, 0xcc, 0x85, 0x0a, 0x4c, 0x11, 0x0f, 0x0b, 0xfe, 0xc7, 0xe5, 0xca, 0x88, 0xe9, 0xd0, 0x6a, 0xe3, 0x12, 0x9a, 0xf9, 0xcf, 0x37, 0x3e, 0xc5, 0xd9, 0x4c, 0xf6, 0x07, 0x73};
 
@@ -154,9 +155,17 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
         [self presentModalViewController:picker animated:YES];
     }
 }
+-(IBAction)viewAttachment:(id)sender{
+    MemoAttachmentFile *attachmentView=[[MemoAttachmentFile alloc]initWithNibName:@"MemoAttachmentFile" bundle:nil];
+    attachmentView.imageView.image=attachmentPict;
+    [self presentModalViewController:attachmentView animated:YES];
+    //[self.navigationController pushViewController:attachmentView animated:YES];
+}
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     imageView.image=image;
+    attachmentPict=image;
     [picker dismissModalViewControllerAnimated:YES];
+    //[self presentModalViewController:attachmentView animated:YES];
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissModalViewControllerAnimated:YES];
