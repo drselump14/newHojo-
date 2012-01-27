@@ -143,7 +143,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
 -(IBAction)takePicture{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     picker.sourceType=UIImagePickerControllerSourceTypeCamera;
     [self presentModalViewController: picker animated:YES];
 }

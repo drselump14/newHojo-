@@ -80,7 +80,16 @@
         player.finishTime=[[NSString alloc]initWithFormat:@"%@:%@",finishTime1,finishTime2];
         [players addObject:player];
     }
+    badgeNumber=[players count];
     [self.tableView reloadData];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = badgeNumber;
+    NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
+    if (badgeNumber==0) {
+        self.navigationController.tabBarItem.badgeValue=nil;
+    } else {
+        self.navigationController.tabBarItem.badgeValue=myBadgeValue;
+    }
+
 	//fetch the data
 }
 - (void)viewDidLoad
@@ -90,38 +99,13 @@
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"送信" style:UIBarButtonItemStyleDone target:self action:@selector(SubmitTable:)];
     [self.navigationItem setLeftBarButtonItem:editButton];
     [self.navigationItem setRightBarButtonItem:submitButton];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.137.228.50/workers/1/onedays.json"]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
     badgeNumber=[players count];
     players =[NSMutableArray arrayWithCapacity:20];
     self.responseData = [NSMutableData data];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.137.228.50/workers/1/onedays.json"]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    /*Player *player =[[Player alloc] init];
-    player.workName=@"種まき";
-    player.crop=@"キャベツ";
-    player.hojo=@"圃場A";
-    player.startTime=@"08:30";
-    player.finishTime=@"09:30";
-    [players addObject:player];
-    player=[[Player alloc] init];
-    player.workName=@"収穫";
-    player.crop=@"タマネギ";
-    player.hojo=@"圃場B";
-    player.startTime=@"09:30";
-    player.finishTime=@"10:30";
-    player.CarrierCount=@"10箱";
-    [players addObject:player];
-    player=[[Player alloc] init];
-    player.workName=@"防除";
-    player.crop=@"レタス";
-    player.hojo=@"圃場A";
-    player.startTime=@"10:30";
-    player.finishTime=@"11:30";
-    player.pestiside=@"2,4-D";
-    player.pestisideVolume=@"10mL";
-    player.pestisideDilution=@"5倍";
-    [players addObject:player];*/
-
+        
     //selectedIndex = [member indexOfObject:self.member];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -142,13 +126,10 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    [UIApplication sharedApplication].applicationIconBadgeNumber = badgeNumber;
-    NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
-    if (badgeNumber==0) {
-        self.navigationController.tabBarItem.badgeValue=nil;
-    } else {
-        self.navigationController.tabBarItem.badgeValue=myBadgeValue;
-    }
+   
+    /*UIAlertView *loginAlert=[[UIAlertView alloc]initWithTitle:@"ユーザーネムとパスワードを入れてください" message:nil delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"ログイン", nil];
+    loginAlert.alertViewStyle=UIAlertViewStyleLoginAndPasswordInput;
+    [loginAlert show];*/
 }
 
 - (void)viewDidAppear:(BOOL)animated

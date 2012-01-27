@@ -87,7 +87,7 @@
     [locationManager startUpdatingLocation];
     memberTable.delegate=self;
     memberTable.dataSource=self;
-    member=[[NSMutableArray alloc]initWithObjects:@"細野",@"村上",@"森",@"山根", nil];
+    member=[[NSMutableArray alloc]initWithObjects: nil];
     // Geocode coordinate (normally we'd use location.coordinate here instead of coord).
     // This will get us something we can query Google's Weather API with
     /*MKReverseGeocoder *geocoder = [[MKReverseGeocoder alloc] initWithCoordinate:coord];
@@ -110,7 +110,7 @@
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+    cell.textLabel.textColor=[UIColor whiteColor];
     cell.textLabel.text=[member objectAtIndex:indexPath.row];
     return cell;
 }

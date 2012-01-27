@@ -5,10 +5,61 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
+        <scene sceneID="LXE-Qe-4bo">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWr-DF-hjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="sg4-i8-YjK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhG-H8-p47">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="EnF-Se-DN0">
+                                <rect key="frame" x="66" y="129" width="189" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必須" minimumFontSize="17" id="3s8-nJ-fy5">
+                                <rect key="frame" x="66" y="190" width="189" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ユーザーネム" lineBreakMode="tailTruncation" minimumFontSize="10" id="DcN-UU-916">
+                                <rect key="frame" x="66" y="107" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="パスワード" lineBreakMode="tailTruncation" minimumFontSize="10" id="0hw-YD-Inf">
+                                <rect key="frame" x="66" y="168" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" id="1X6-Tk-Zsx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="hojo!" id="I6u-hY-39P">
+                                        <barButtonItem key="rightBarButtonItem" title="サインイン" style="done" id="0QD-xc-qXz"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-597" y="172"/>
+        </scene>
         <scene sceneID="15">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kpO-Vg-pud"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -117,7 +168,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pTi-5e-jiV">
                                 <rect key="frame" x="0.0" y="195" width="320" height="182"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemberCell" id="8Lv-04-IxC">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -153,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="作業情報" id="G1X-w0-wHB"/>
                     <connections>
@@ -176,7 +227,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="55" sectionHeaderHeight="10" sectionFooterHeight="10" id="dkL-Cg-Zlu">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiaryCell" editingAccessoryType="detailDisclosureButton" textLabel="Lox-qp-r3I" detailTextLabel="HKw-4L-00b" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="ojq-tD-Fg2" customClass="DiaryCell">
                                 <rect key="frame" x="0.0" y="46" width="320" height="67"/>
@@ -219,18 +270,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PAj-lu-zG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="m3e-Rj-A5K" customClass="SecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o3r-FA-HUo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="fL2-SY-KaE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="QHi-7X-bZz">
-                                <rect key="frame" x="0.0" y="323" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="QHi-7X-bZz">
+                                <rect key="frame" x="0.0" y="367" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="gbN-WL-ouF"/>
+                                    <barButtonItem title="マップの種類" id="gbN-WL-ouF"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -518,7 +569,7 @@
                 <navigationController id="c6E-E5-pJn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="作業予定" image="calculator.png" id="1W9-Sx-V5C"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="v5B-Ve-p95">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="v5B-Ve-p95">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -548,36 +599,13 @@
             </objects>
             <point key="canvasLocation" x="1506" y="-114"/>
         </scene>
-        <scene sceneID="WYD-6g-dIU">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Egb-0Q-r9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ffp-oj-4Qw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eKg-Nl-hfg">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="TES!!" lineBreakMode="tailTruncation" minimumFontSize="10" id="LjH-1K-PCH">
-                                <rect key="frame" x="131" y="45" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="tes iki cok!!" id="TYx-WZ-UoG"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2032" y="472"/>
-        </scene>
         <scene sceneID="Ft6-Lp-ofr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyM-p4-N9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Q79-vY-i8f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="圃場マップ" image="world.png" id="A75-MV-teN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dIP-we-qLu">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackTranslucent" id="dIP-we-qLu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -595,7 +623,7 @@
                 <navigationController id="aM7-mw-kGe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="作業情報" image="1Star.png" id="j0U-hq-Umc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DaV-1z-V7Y">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="DaV-1z-V7Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -613,7 +641,7 @@
                 <navigationController id="E9Q-N7-Z9a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="メモ" image="pencilangled.png" id="HYY-eW-JTg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6LK-Dv-omr">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="6LK-Dv-omr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

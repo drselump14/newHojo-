@@ -17,6 +17,9 @@
     NSArray *label;
     NSString *startTimeLabel,*finishTimeLabel,*Time;
     NSInteger timeSelection;
+    IBOutlet UITableViewCell *oneDay;
+    IBOutlet UISwitch *oneDaySwitch;
+    NSString *editStartTime,*editFinishTime;
 }
 @property (strong,nonatomic) NSString *startTimeLabel;
 @property (strong,nonatomic) NSString *finishTimeLabel;
@@ -25,5 +28,5 @@
 
 -(IBAction)PickWorkTime:(id)sender;
 -(IBAction)SubmitTable:(id)sender;
--(void)allDays:(id)sender;
+-(IBAction)allDays:(id)sender;
 @end

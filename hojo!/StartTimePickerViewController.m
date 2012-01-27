@@ -42,6 +42,8 @@
     workTimeTable.dataSource=self;
     label=[[NSArray alloc]initWithObjects:@"作業開始",@"作業終了",@"終日", nil];
     timeSelection=0;
+    editStartTime=startTimeLabel;
+    editFinishTime=finishTimeLabel;
     //startTimeLabel=Time;
     //self.view.backgroundColor=[UIColor clearColor];
     
@@ -65,21 +67,28 @@
         cell.detailTextLabel.text=finishTimeLabel;
     }
     else{
-        cell.detailTextLabel.text=nil;
+        /*cell.detailTextLabel.text=nil;
         cell.accessoryType=UITableViewCellAccessoryNone;
+        cell.highlighted=NO;
         UISwitch *switchObj = [[UISwitch alloc] init];
-        switchObj.on = NO;
-        cell.accessoryView = switchObj;
-        [switchObj addTarget:self action:@selector(allDays:) forControlEvents:UIControlEventTouchUpInside];
+        //switchObj.on = NO;
+        cell.accessoryView = switchObj;*/
+        return oneDay;
     }
     
     return cell;
 }
--(void)allDays:(id)sender{
-    startTimeLabel=@"09:00";
-    finishTimeLabel=@"17:00";
-    [workTimeTable reloadData];
-             
+-(IBAction)allDays:(id)sender{
+    if (oneDaySwitch.on==YES) {
+        startTimeLabel=@"09:00";
+        finishTimeLabel=@"17:00";
+        [workTimeTable reloadData];
+    }
+    else{
+        startTimeLabel=editStartTime;
+        finishTimeLabel=editFinishTime;
+        [workTimeTable reloadData];
+    }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
