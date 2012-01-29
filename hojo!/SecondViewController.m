@@ -36,7 +36,7 @@
 - (void) changeMapType: (id)sender
 {
     if (myMapView.mapType == MKMapTypeStandard)
-        myMapView.mapType = MKMapTypeSatellite;
+        myMapView.mapType = MKMapTypeHybrid;
     else
         myMapView.mapType = MKMapTypeStandard;
 } 

@@ -15,6 +15,7 @@
     IBOutlet UIButton *fotoButton,*recordButton,*saveButton;
     IBOutlet UIImageView *imageView;
     IBOutlet UIActivityIndicatorView *recordActivity;
+    IBOutlet UIButton *attachFile;
     UIImage *attachmentPict;
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;

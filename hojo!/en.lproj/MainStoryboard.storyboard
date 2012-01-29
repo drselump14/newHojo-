@@ -280,10 +280,6 @@
                                     <action selector="recordAudio" destination="inC-13-lYj" eventType="touchUpInside" id="fKE-9D-j2f"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="IzD-P8-Dmd">
-                                <rect key="frame" x="5" y="239" width="162" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CNK-c2-cNy">
                                 <rect key="frame" x="5" y="48" width="309" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -316,7 +312,7 @@
                         <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="PZg-oe-fBc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="IzD-P8-Dmd" id="SrL-tX-U5G"/>
+                        <outlet property="attachFile" destination="CNK-c2-cNy" id="Npr-ri-3HD"/>
                         <outlet property="memoTextView" destination="qp5-5N-28R" id="IMj-dn-xty"/>
                         <outlet property="recordActivity" destination="bKv-Zz-EUC" id="NLp-jK-Fmy"/>
                         <outlet property="recordButton" destination="LGz-L1-Fod" id="oJg-ul-poC"/>
@@ -443,71 +439,6 @@
         <image name="pencilangled.png" width="26" height="26"/>
         <image name="world.png" width="26" height="26"/>
     </resources>
-    <classes>
-        <class className="DiaryCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiaryCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mySwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DiaryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiaryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="AddTable:"/>
-                <relationship kind="action" name="EditTable:"/>
-                <relationship kind="action" name="SubmitTable:"/>
-            </relationships>
-        </class>
-        <class className="MemberPickerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemberPickerViewController.h"/>
-        </class>
-        <class className="MemoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="pictureFromLibrary"/>
-                <relationship kind="action" name="playAudio"/>
-                <relationship kind="action" name="recordAudio"/>
-                <relationship kind="action" name="showActionSheet:"/>
-                <relationship kind="action" name="stop"/>
-                <relationship kind="action" name="takePicture"/>
-                <relationship kind="action" name="textFieldReturn:"/>
-                <relationship kind="action" name="viewAttachment:"/>
-                <relationship kind="outlet" name="fotoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recordActivity" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myMapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="WorkInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addTodayMember:"/>
-                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="conditionImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="conditionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="conditionsImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentTempLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="highTempLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="humidityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lowTempLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="memberTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

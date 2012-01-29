@@ -39,7 +39,25 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
 {
 }
 */
+- (void)viewWillAppear:(BOOL)animated{
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *pngFilePath = [NSString stringWithFormat:@"%@/MyName.png",docDir];
+    //UIImage *image = [[UIImage alloc] initWithContentsOfFile:pngFilePath];
+    NSFileManager *filemgr;
+    filemgr = [NSFileManager defaultManager];
+    
+    if ([filemgr fileExistsAtPath: pngFilePath ] == YES)
+    {
+        NSLog (@"File exists");
 
+    }    else
+    {
+        NSLog (@"File not found");
+        attachFile.enabled=NO;
+        [attachFile setTitle:@"添付ファイルはなし" forState:UIControlStateNormal];
+    }
+    
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
@@ -166,6 +184,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     imageView.image=image;
     //attachmentPict=image;
     [picker dismissModalViewControllerAnimated:YES];
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    NSString *pngFilePath = [NSString stringWithFormat:@"%@/MyName.png",docDir];
+    NSData *data = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    [data writeToFile:pngFilePath atomically:YES];
+    attachFile.enabled=YES;
+    [attachFile setTitle:@"添付ファイルを表示" forState:1];
     //[self presentModalViewController:attachmentView animated:YES];
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{

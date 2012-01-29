@@ -34,10 +34,29 @@
 {
     [super viewDidLoad];
     self.title=@"添付ファイルを表示";
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *pngFilePath = [NSString stringWithFormat:@"%@/MyName.png",docDir];
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:pngFilePath];
+    
+    imageView.image=image;
     // Do any additional setup after loading the view from its nib.
 }
 -(IBAction)doneViewer:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
+}
+-(IBAction)deletePict:(id)sender{
+    imageView.image=nil;
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *pngFilePath = [NSString stringWithFormat:@"%@/MyName.png",docDir];
+    NSFileManager *filemgr;
+    
+    filemgr = [NSFileManager defaultManager];
+    
+    if ([filemgr removeItemAtPath: 
+         pngFilePath error: NULL]  == YES)
+        NSLog (@"Remove successful");
+    else
+        NSLog (@"Remove failed");
 }
 - (void)viewDidUnload
 {

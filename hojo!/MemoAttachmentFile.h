@@ -14,5 +14,6 @@
 @property (nonatomic,retain) IBOutlet UIImageView *imageView;
 
 -(IBAction)doneViewer:(id)sender;
+-(IBAction)deletePict:(id)sender;
 
 @end
