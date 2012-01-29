@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Player.h"
 #import "DiaryViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate{
     NSMutableArray *players;
@@ -45,15 +46,18 @@
     player.pestiside=@"2,4-D";
     player.pestisideVolume=@"10mL";
     player.pestisideDilution=@"5倍";
-    [players addObject:player];
-    UITabBarController *tabBarController = 
+    [players addObject:player];*/
+    /*UITabBarController *tabBarController = 
     (UITabBarController *)self.window.rootViewController;
 	UINavigationController *navigationController = 
     [[tabBarController viewControllers] objectAtIndex:0];
 	DiaryViewController *playersViewController = 
     [[navigationController viewControllers] objectAtIndex:0];
-	playersViewController.players = players;*/
+	//playersViewController.players = players;
     // Override point for customization after application launch.
+    LoginViewController *loginController=[[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [playersViewController presentModalViewController:loginController animated:YES];
+    //[self.tabController presentModalViewController:loginController animated:YES];*/
     return YES;
 }
 							

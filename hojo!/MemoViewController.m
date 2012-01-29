@@ -48,6 +48,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     memoTextView.editable=YES;
     playButton.enabled = NO;
     stopButton.enabled = NO;
+    recordActivity.hidden=YES;
     memoTextView.delegate=self;
     [SpeechKit setupWithID:@"NMDPTRIAL_botoks20111030234755"
                       host:@"sandbox.nmdp.nuancemobility.net"
@@ -163,7 +164,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     imageView.image=image;
-    attachmentPict=image;
+    //attachmentPict=image;
     [picker dismissModalViewControllerAnimated:YES];
     //[self presentModalViewController:attachmentView animated:YES];
 }
@@ -174,11 +175,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
 {
     if (transactionState == TS_RECORDING) {
         [recognizer stopRecording];
+        //[recordActivity stopAnimating];
     }
     else if (transactionState == TS_IDLE) {
         playButton.enabled = NO;
         stopButton.enabled = YES;
         stopButton.highlighted=YES;
+        //[recordActivity startAnimating];
         NSLog(@"録音が始まる");
         //[audioRecorder record];
         recognizer = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType
@@ -261,6 +264,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     NSLog(@"Recording started.");
     //[vocalizer speakString:@"録音開始"];
     transactionState = TS_RECORDING;
+    recordActivity.hidden=NO;
+    [recordActivity startAnimating];
     [recordButton setTitle:@"録音中..." forState:UIControlStateNormal];
 }
 
@@ -279,6 +284,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     long numOfResults = [results.results count];
     
     transactionState = TS_IDLE;
+    [recordActivity stopAnimating];
+    recordActivity.hidden=YES;
     [recordButton setTitle:@"音声" forState:UIControlStateNormal];
     
     if (numOfResults > 0)

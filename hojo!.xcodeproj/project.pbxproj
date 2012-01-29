@@ -120,6 +120,8 @@
 		739E380014CD1890006AA739 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739E37FF14CD1890006AA739 /* CoreAudio.framework */; };
 		739E380E14CD45DB006AA739 /* MapDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739E380C14CD45DB006AA739 /* MapDetailsViewController.m */; };
 		739E380F14CD45DB006AA739 /* MapDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739E380D14CD45DB006AA739 /* MapDetailsViewController.xib */; };
+		739F1C3414D43D3200D01B9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739F1C3214D43D3200D01B9A /* LoginViewController.m */; };
+		739F1C3514D43D3200D01B9A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739F1C3314D43D3200D01B9A /* LoginViewController.xib */; };
 		73BF2A0414C158E900D5A151 /* MemberPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BF2A0314C158E900D5A151 /* MemberPickerViewController.m */; };
 		73EA2F5914C6649700DE080A /* WorkNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EA2F5714C6649700DE080A /* WorkNameTableViewController.m */; };
 		73EA2F5A14C6649700DE080A /* WorkNameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73EA2F5814C6649700DE080A /* WorkNameTableViewController.xib */; };
@@ -367,6 +369,9 @@
 		739E380B14CD45DB006AA739 /* MapDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailsViewController.h; sourceTree = "<group>"; };
 		739E380C14CD45DB006AA739 /* MapDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailsViewController.m; sourceTree = "<group>"; };
 		739E380D14CD45DB006AA739 /* MapDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapDetailsViewController.xib; sourceTree = "<group>"; };
+		739F1C3114D43D3200D01B9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		739F1C3214D43D3200D01B9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		739F1C3314D43D3200D01B9A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		73BF2A0214C158E900D5A151 /* MemberPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberPickerViewController.h; sourceTree = "<group>"; };
 		73BF2A0314C158E900D5A151 /* MemberPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberPickerViewController.m; sourceTree = "<group>"; };
 		73EA2F5614C6649700DE080A /* WorkNameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkNameTableViewController.h; sourceTree = "<group>"; };
@@ -623,6 +628,9 @@
 				7310F89614CC5BF400DE76B5 /* メモ */,
 				733EEB9914CC1C03004C6B5F /* 作業情報 */,
 				739E380914CD458B006AA739 /* 圃場マップ */,
+				739F1C3114D43D3200D01B9A /* LoginViewController.h */,
+				739F1C3214D43D3200D01B9A /* LoginViewController.m */,
+				739F1C3314D43D3200D01B9A /* LoginViewController.xib */,
 			);
 			path = "hojo!";
 			sourceTree = "<group>";
@@ -1037,6 +1045,7 @@
 				7346CAC714D03F6E0029A7A4 /* earcon_done_listening.wav in Resources */,
 				7346CAC814D03F6E0029A7A4 /* earcon_listening.wav in Resources */,
 				7395B7CD14D12D8500C0CAB2 /* MemoAttachmentFile.xib in Resources */,
+				739F1C3514D43D3200D01B9A /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,6 +1130,7 @@
 				7395B7F714D1ABD200C0CAB2 /* SBJsonTokeniser.m in Sources */,
 				7395B7F814D1ABD200C0CAB2 /* SBJsonUTF8Stream.m in Sources */,
 				7395B7F914D1ABD200C0CAB2 /* SBJsonWriter.m in Sources */,
+				739F1C3414D43D3200D01B9A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

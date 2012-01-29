@@ -15,6 +15,7 @@
 
 -(void)didAddPlayer:(Player *)player;
 -(void)didEditPlayer:(Player *)player editRow:(NSInteger)row;
+-(void)getUser:(NSString *)user;
 
 @end
 

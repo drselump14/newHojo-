@@ -14,6 +14,7 @@
     IBOutlet UITextView *memoTextView;
     IBOutlet UIButton *fotoButton,*recordButton,*saveButton;
     IBOutlet UIImageView *imageView;
+    IBOutlet UIActivityIndicatorView *recordActivity;
     UIImage *attachmentPict;
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;

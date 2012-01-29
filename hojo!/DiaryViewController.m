@@ -13,6 +13,7 @@
 #import "EditViewController.h"
 #import "AddDiaryViewController.h"
 #import "SBJson.h"
+#import "LoginViewController.h"
 
 @implementation DiaryViewController
 
@@ -95,12 +96,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    LoginViewController *loginController=[[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    loginController.delegate=self;
+    [self presentModalViewController:loginController animated:YES];
     UIBarButtonItem *editButton =[[UIBarButtonItem alloc] initWithTitle:@"編集" style:UIBarButtonItemStyleBordered target:self action:@selector(EditTable:)];
     UIBarButtonItem *submitButton = [[UIBarButtonItem alloc] initWithTitle:@"送信" style:UIBarButtonItemStyleDone target:self action:@selector(SubmitTable:)];
     [self.navigationItem setLeftBarButtonItem:editButton];
     [self.navigationItem setRightBarButtonItem:submitButton];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.137.228.50/workers/1/onedays.json"]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    /*NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://210.137.228.50/workers/1/onedays.json"]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];*/
     badgeNumber=[players count];
     players =[NSMutableArray arrayWithCapacity:20];
     self.responseData = [NSMutableData data];
@@ -391,6 +395,13 @@
     [self.players replaceObjectAtIndex:row withObject:player];
     [self.tableView reloadData];
     
+}
+-(void)getUser:(NSString *)user{
+    NSLog(@"%@",user);
+    self.responseData=[NSMutableData data];
+    NSString *urlString=[[NSString alloc]initWithFormat:@"http://210.137.228.50/workers/%@/onedays.json",user];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 /*- (void)diaryDetailsViewControllerDidCancel:
 (DiaryDetailsViewController *)controller
