@@ -37,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    usernameField.text=@"saito";
+    passwordField.text=@"murakami";
     failedAlert=[[UIAlertView alloc]initWithTitle:@"エラー" message:@"ユーザーネムあるいはパスワードが間違っています" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     userNameArray=[[NSMutableArray alloc]initWithObjects:@"saito",@"takahashi",@"sato",@"kato", nil];
     passwordArray=[[NSMutableArray alloc]initWithObjects:@"murakami",@"murakami",@"murakami",@"murakami", nil];

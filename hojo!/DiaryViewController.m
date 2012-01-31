@@ -14,6 +14,8 @@
 #import "AddDiaryViewController.h"
 #import "SBJson.h"
 #import "LoginViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @implementation DiaryViewController
 
@@ -67,12 +69,11 @@
         NSString *finishTime2=[[latestLoans objectAtIndex:i]objectForKey:@"tiem22"];
        // NSLog(@"%@",workNameJSON);
         //choose a random loan
-        if ([startTime1 integerValue]<10||[startTime2 integerValue]<10||[finishTime1 integerValue]<10||[finishTime2 integerValue]<10) {
-            startTime1=[NSString stringWithFormat:@"0%@",startTime1];
-            startTime2=[NSString stringWithFormat:@"0%@",startTime2];
-            finishTime1=[NSString stringWithFormat:@"0%@",finishTime1];
-            finishTime2=[NSString stringWithFormat:@"0%@",finishTime2];
-        } 
+        if ([startTime1 integerValue]<10) startTime1=[NSString stringWithFormat:@"0%@",startTime1];
+        if([startTime2 integerValue]<10)startTime2=[NSString stringWithFormat:@"0%@",startTime2];
+        if([finishTime1 integerValue]<10)finishTime1=[NSString stringWithFormat:@"0%@",finishTime1];
+        if([finishTime2 integerValue]<10)finishTime2=[NSString stringWithFormat:@"0%@",finishTime2];
+            
         Player *player =[[Player alloc] init];
         player.workName=workNameJSON;
         player.crop=crop;
@@ -90,8 +91,9 @@
     } else {
         self.navigationController.tabBarItem.badgeValue=myBadgeValue;
     }
+    
 
-	//fetch the data
+    //fetch the data
 }
 - (void)viewDidLoad
 {
@@ -108,8 +110,7 @@
     badgeNumber=[players count];
     players =[NSMutableArray arrayWithCapacity:20];
     self.responseData = [NSMutableData data];
-    
-        
+            
     //selectedIndex = [member indexOfObject:self.member];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -371,6 +372,44 @@
     }
 }
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *buttonTitle=[actionSheet buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"サーバーに送信"]) {
+        for (int i=0; i<[players count]; i++) {
+            Player *player=[self.players objectAtIndex:i];
+            NSArray *piecesOfStartTime=[player.startTime componentsSeparatedByString:@":"];
+            NSString *time11=[piecesOfStartTime objectAtIndex:0];
+            NSString *time12=[piecesOfStartTime objectAtIndex:1];
+            NSArray *piecesOfFinishTime=[player.finishTime componentsSeparatedByString:@":"];
+            NSString *time21=[piecesOfFinishTime objectAtIndex:0];
+            NSString *time22=[piecesOfFinishTime objectAtIndex:1];
+            //NSLog(@"%@ hahah %@",time11,time12);
+            NSString *urlString=[[NSString alloc]initWithString:@"http://210.137.228.50/crops/4/diaries.json"];
+            NSURL *url=[NSURL URLWithString:urlString];
+            __weak ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+            [request setPostValue:@"2012-01-31" forKey:@"diary[day]"];
+            [request setPostValue:player.workName forKey:@"diary[worked]"];
+            [request setPostValue:player.crop forKey:@"diary[sakumotsu]"];
+            [request setPostValue:time11 forKey:@"diary[time11]"];
+            [request setPostValue:time12 forKey:@"diary[time12]"];
+            [request setPostValue:time21 forKey:@"diary[time21]"];
+            [request setPostValue:time22 forKey:@"diary[time22]"];
+            [request setCompletionBlock:^{
+                NSString *responseString=[request responseString];
+                NSLog(@"Response: %@", responseString);
+            }];
+            [request setFailedBlock:^{
+                NSError *error = [request error];
+                NSLog(@"Error: %@", error.localizedDescription);
+            }];
+            [request startAsynchronous];
+        }
+        
+        //NSLog(@"sent");
+    } else {
+        NSLog(@"Canceled");
+    }
+}
 -(IBAction)AddTable:(id)sender{
     /*AddDiaryViewController *detailViewController = [[AddDiaryViewController alloc] initWithNibName:@"AddDiaryViewController" bundle:nil];
     // ...
