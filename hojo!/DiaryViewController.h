@@ -16,7 +16,7 @@
 -(void)didAddPlayer:(Player *)player;
 -(void)didEditPlayer:(Player *)player editRow:(NSInteger)row;
 -(void)getUser:(NSString *)user;
-
+-(void)getUserName:(NSString *)userName;
 @end
 
 @interface DiaryViewController : UITableViewController<DiaryViewDelegate,UIActionSheetDelegate>
@@ -25,6 +25,7 @@
     EditViewController *editViewController;
     int badgeNumber;
     NSMutableData *responseData;
+    NSString *userNameString;
 }
 
 @property (nonatomic, strong) NSMutableArray *players;

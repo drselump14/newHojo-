@@ -49,11 +49,15 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     if ([filemgr fileExistsAtPath: pngFilePath ] == YES)
     {
         NSLog (@"File exists");
+        attachFile.enabled=YES;
+        //attachFile.highlighted=YES;
+        [attachFile setTitle:@"添付ファイルを表示" forState:UIControlStateNormal];
 
     }    else
     {
         NSLog (@"File not found");
         attachFile.enabled=NO;
+        //attachFile.highlighted=NO;
         [attachFile setTitle:@"添付ファイルはなし" forState:UIControlStateNormal];
     }
     
@@ -190,8 +194,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     NSData *data = [NSData dataWithData:UIImagePNGRepresentation(image)];
     [data writeToFile:pngFilePath atomically:YES];
     attachFile.enabled=YES;
-    [attachFile setTitle:@"添付ファイルを表示" forState:1];
-    //[self presentModalViewController:attachmentView animated:YES];
+    //attachFile.highlighted=YES;
+    [attachFile setTitle:@"添付ファイルを表示" forState:UIControlStateNormal];
 }
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [picker dismissModalViewControllerAnimated:YES];

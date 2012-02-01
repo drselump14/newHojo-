@@ -50,6 +50,7 @@
     if ([usernameField.text isEqualToString:@"saito"]&&[passwordField.text isEqualToString:@"murakami"]) {
         [self dismissModalViewControllerAnimated:YES];
         [delegate getUser:@"1"];
+        [delegate getUserName:@"斉藤"];
     }
     else{
         [failedAlert show];

@@ -19,5 +19,6 @@
 @property (nonatomic,copy) NSString *pestisideVolume;
 @property (nonatomic,copy) NSString *pestisideDilution;
 @property (nonatomic,copy) NSString *CarrierCount;
+@property (nonatomic,copy) NSString *Check;
 
 @end

@@ -19,5 +19,6 @@
 @synthesize pestisideVolume;
 @synthesize pestisideDilution;
 @synthesize CarrierCount;
+@synthesize Check;
 
 @end

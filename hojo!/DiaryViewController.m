@@ -80,6 +80,7 @@
         player.hojo=area;
         player.startTime=[[NSString alloc]initWithFormat:@"%@:%@",startTime1,startTime2];
         player.finishTime=[[NSString alloc]initWithFormat:@"%@:%@",finishTime1,finishTime2];
+        player.Check=@"NO";
         [players addObject:player];
     }
     badgeNumber=[players count];
@@ -268,10 +269,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
+    Player *player=[self.players objectAtIndex:indexPath.row];
     if (cell.accessoryType==UITableViewCellAccessoryCheckmark) {
         cell.accessoryType = UITableViewCellAccessoryNone;
         [UIApplication sharedApplication].applicationIconBadgeNumber++;
         badgeNumber=badgeNumber+1;
+        player.Check=@"NO";
         NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
         if (badgeNumber==0) {
             self.navigationController.tabBarItem.badgeValue=nil;
@@ -284,6 +287,7 @@
         cell.accessoryType=UITableViewCellAccessoryCheckmark;
         [UIApplication sharedApplication].applicationIconBadgeNumber--;
         badgeNumber=badgeNumber-1;
+        player.Check=@"YES";
         NSString *myBadgeValue=[[NSString alloc]initWithFormat:@"%d",badgeNumber];
         if (badgeNumber==0) {
             self.navigationController.tabBarItem.badgeValue=nil;
@@ -377,32 +381,41 @@
     if ([buttonTitle isEqualToString:@"サーバーに送信"]) {
         for (int i=0; i<[players count]; i++) {
             Player *player=[self.players objectAtIndex:i];
-            NSArray *piecesOfStartTime=[player.startTime componentsSeparatedByString:@":"];
-            NSString *time11=[piecesOfStartTime objectAtIndex:0];
-            NSString *time12=[piecesOfStartTime objectAtIndex:1];
-            NSArray *piecesOfFinishTime=[player.finishTime componentsSeparatedByString:@":"];
-            NSString *time21=[piecesOfFinishTime objectAtIndex:0];
-            NSString *time22=[piecesOfFinishTime objectAtIndex:1];
-            //NSLog(@"%@ hahah %@",time11,time12);
-            NSString *urlString=[[NSString alloc]initWithString:@"http://210.137.228.50/crops/4/diaries.json"];
-            NSURL *url=[NSURL URLWithString:urlString];
-            __weak ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
-            [request setPostValue:@"2012-01-31" forKey:@"diary[day]"];
-            [request setPostValue:player.workName forKey:@"diary[worked]"];
-            [request setPostValue:player.crop forKey:@"diary[sakumotsu]"];
-            [request setPostValue:time11 forKey:@"diary[time11]"];
-            [request setPostValue:time12 forKey:@"diary[time12]"];
-            [request setPostValue:time21 forKey:@"diary[time21]"];
-            [request setPostValue:time22 forKey:@"diary[time22]"];
-            [request setCompletionBlock:^{
-                NSString *responseString=[request responseString];
-                NSLog(@"Response: %@", responseString);
-            }];
-            [request setFailedBlock:^{
-                NSError *error = [request error];
-                NSLog(@"Error: %@", error.localizedDescription);
-            }];
-            [request startAsynchronous];
+            NSDate* date=[NSDate date];
+            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"yyyy-MM-dd"];
+            NSString *str=[formatter stringFromDate:date];
+            NSLog(@"%@",str);
+            if ([player.Check isEqualToString:@"YES"]) {
+                NSArray *piecesOfStartTime=[player.startTime componentsSeparatedByString:@":"];
+                NSString *time11=[piecesOfStartTime objectAtIndex:0];
+                NSString *time12=[piecesOfStartTime objectAtIndex:1];
+                NSArray *piecesOfFinishTime=[player.finishTime componentsSeparatedByString:@":"];
+                NSString *time21=[piecesOfFinishTime objectAtIndex:0];
+                NSString *time22=[piecesOfFinishTime objectAtIndex:1];
+                //NSLog(@"%@ hahah %@",time11,time12);
+                NSString *urlString=[[NSString alloc]initWithString:@"http://210.137.228.50/crops/3/diaries.json"];
+                NSURL *url=[NSURL URLWithString:urlString];
+                __weak ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:url];
+                [request setPostValue:str forKey:@"diary[day]"];
+                [request setPostValue:player.workName forKey:@"diary[worked]"];
+                [request setPostValue:player.crop forKey:@"diary[sakumotsu]"];
+                [request setPostValue:time11 forKey:@"diary[time11]"];
+                [request setPostValue:time12 forKey:@"diary[time12]"];
+                [request setPostValue:time21 forKey:@"diary[time21]"];
+                [request setPostValue:time22 forKey:@"diary[time22]"];
+                [request setPostValue:userNameString forKey:@"diary[worker]"];
+                [request setCompletionBlock:^{
+                    NSString *responseString=[request responseString];
+                    NSLog(@"Response: %@", responseString);
+                }];
+                [request setFailedBlock:^{
+                    NSError *error = [request error];
+                    NSLog(@"Error: %@", error.localizedDescription);
+                }];
+                [request startAsynchronous];
+            }
+            
         }
         
         //NSLog(@"sent");
@@ -441,6 +454,9 @@
     NSString *urlString=[[NSString alloc]initWithFormat:@"http://210.137.228.50/workers/%@/onedays.json",user];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+-(void)getUserName:(NSString *)userName{
+    userNameString=userName;
 }
 /*- (void)diaryDetailsViewControllerDidCancel:
 (DiaryDetailsViewController *)controller
