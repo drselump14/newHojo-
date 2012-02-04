@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MemoViewController.h"
 
-@interface MemoAttachmentFile : UIViewController
+@interface MemoAttachmentFile : UIViewController<UIActionSheetDelegate>{
+    IBOutlet UILabel *fileGoneLabel;
+}
 
 @property (nonatomic,retain) IBOutlet UIImageView *imageView;
 
