@@ -94,6 +94,7 @@
 		7350896514CE4D9E0097953D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 7350896414CE4D9E0097953D /* Icon-72.png */; };
 		7350DFB814CFA4C9004AB2A7 /* VolumeInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */; };
 		7350DFB914CFA4C9004AB2A7 /* VolumeInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7350DFB714CFA4C9004AB2A7 /* VolumeInputViewController.xib */; };
+		73842A4C14DEB47900735DEC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 73842A4B14DEB47900735DEC /* MBProgressHUD.m */; };
 		739110D314C8413400BC3595 /* CropsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739110D114C8413400BC3595 /* CropsTableViewController.m */; };
 		739110D414C8413400BC3595 /* CropsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 739110D214C8413400BC3595 /* CropsTableViewController.xib */; };
 		7391111C14C86D5800BC3595 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7391111A14C86D5700BC3595 /* EditViewController.m */; };
@@ -334,6 +335,8 @@
 		7350DFB514CFA4C9004AB2A7 /* VolumeInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeInputViewController.h; sourceTree = "<group>"; };
 		7350DFB614CFA4C9004AB2A7 /* VolumeInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeInputViewController.m; sourceTree = "<group>"; };
 		7350DFB714CFA4C9004AB2A7 /* VolumeInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VolumeInputViewController.xib; sourceTree = "<group>"; };
+		73842A4A14DEB47900735DEC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		73842A4B14DEB47900735DEC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		739110D014C8413400BC3595 /* CropsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropsTableViewController.h; sourceTree = "<group>"; };
 		739110D114C8413400BC3595 /* CropsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropsTableViewController.m; sourceTree = "<group>"; };
 		739110D214C8413400BC3595 /* CropsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CropsTableViewController.xib; sourceTree = "<group>"; };
@@ -635,6 +638,7 @@
 		732463E214BDE121000A44FE /* hojo! */ = {
 			isa = PBXGroup;
 			children = (
+				73842A4814DEB3E000735DEC /* Progress */,
 				73CC37AC14D6E1C0002B2102 /* ASIHTTP */,
 				7395B7D314D1AB6700C0CAB2 /* JSON */,
 				730BC2A714C51CAD00FE257F /* AddDiaryViewController.h */,
@@ -773,6 +777,15 @@
 				733EEBB914CC1C86004C6B5F /* TouchXML.h */,
 			);
 			name = TouchXML;
+			sourceTree = "<group>";
+		};
+		73842A4814DEB3E000735DEC /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				73842A4A14DEB47900735DEC /* MBProgressHUD.h */,
+				73842A4B14DEB47900735DEC /* MBProgressHUD.m */,
+			);
+			name = Progress;
 			sourceTree = "<group>";
 		};
 		7395B7D314D1AB6700C0CAB2 /* JSON */ = {
@@ -1209,6 +1222,7 @@
 				73CC37C814D6E274002B2102 /* ASIInputStream.m in Sources */,
 				73CC37C914D6E274002B2102 /* ASINetworkQueue.m in Sources */,
 				73CC37CC14D6E283002B2102 /* Reachability.m in Sources */,
+				73842A4C14DEB47900735DEC /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

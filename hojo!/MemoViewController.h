@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <SpeechKit/SpeechKit.h>
+#import "MBProgressHUD.h"
 
-@interface MemoViewController : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVAudioPlayerDelegate,AVAudioRecorderDelegate,UITextViewDelegate,SpeechKitDelegate, SKRecognizerDelegate>{
+@protocol MemoViewDelegate <NSObject>
+
+-(void)removeButton;
+
+@end
+
+@interface MemoViewController : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVAudioPlayerDelegate,AVAudioRecorderDelegate,UITextViewDelegate,SpeechKitDelegate, SKRecognizerDelegate,MemoViewDelegate,MBProgressHUDDelegate>{
     IBOutlet UITextView *memoTextView;
     IBOutlet UIButton *fotoButton,*recordButton,*saveButton;
     IBOutlet UIImageView *imageView;
@@ -20,9 +27,10 @@
     AVAudioRecorder *audioRecorder;
     AVAudioPlayer *audioPlayer;
     UIButton *playButton;
-    UIButton *stopButton;
+    UIButton *stopButton,*imageButton;
     SKRecognizer* recognizer;
     //SKVocalizer * vocalizer;
+    MBProgressHUD *HUD;
     enum {
         TS_IDLE,
         TS_INITIAL,

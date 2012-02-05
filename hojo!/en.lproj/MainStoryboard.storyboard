@@ -255,7 +255,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メモ" id="qp5-5N-28R">
-                                <rect key="frame" x="5" y="93" width="309" height="280"/>
+                                <rect key="frame" x="5" y="48" width="309" height="325"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -280,21 +280,6 @@
                                     <action selector="recordAudio" destination="inC-13-lYj" eventType="touchUpInside" id="fKE-9D-j2f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CNK-c2-cNy">
-                                <rect key="frame" x="5" y="48" width="309" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="添付ファイルを表示">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewAttachment:" destination="inC-13-lYj" eventType="touchUpInside" id="wLq-21-YHs"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="bKv-Zz-EUC">
                                 <rect key="frame" x="143" y="164" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -312,7 +297,6 @@
                         <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="PZg-oe-fBc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="attachFile" destination="CNK-c2-cNy" id="Npr-ri-3HD"/>
                         <outlet property="memoTextView" destination="qp5-5N-28R" id="IMj-dn-xty"/>
                         <outlet property="recordActivity" destination="bKv-Zz-EUC" id="NLp-jK-Fmy"/>
                         <outlet property="recordButton" destination="LGz-L1-Fod" id="oJg-ul-poC"/>
