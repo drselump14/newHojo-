@@ -10,6 +10,7 @@
 #import "Player.h"
 #import "EditViewController.h"
 #import "SBJson.h"
+#import "MBProgressHUD.h"
 
 @protocol DiaryViewDelegate <NSObject>
 
@@ -19,13 +20,14 @@
 -(void)getUserName:(NSString *)userName;
 @end
 
-@interface DiaryViewController : UITableViewController<DiaryViewDelegate,UIActionSheetDelegate>
+@interface DiaryViewController : UITableViewController<DiaryViewDelegate,UIActionSheetDelegate,MBProgressHUDDelegate>
 {
     NSMutableArray *players;
     EditViewController *editViewController;
     int badgeNumber;
     NSMutableData *responseData;
     NSString *userNameString;
+    MBProgressHUD *HUD;
 }
 
 @property (nonatomic, strong) NSMutableArray *players;

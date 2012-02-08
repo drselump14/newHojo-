@@ -16,6 +16,7 @@
 #import "LoginViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import <unistd.h>
 
 @implementation DiaryViewController
 
@@ -93,7 +94,7 @@
         self.navigationController.tabBarItem.badgeValue=myBadgeValue;
     }
     
-
+    [HUD hide:YES];
     //fetch the data
 }
 - (void)viewDidLoad
@@ -454,6 +455,11 @@
     NSString *urlString=[[NSString alloc]initWithFormat:@"http://210.137.228.50/workers/%@/onedays.json",user];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Loading..";
+	[HUD show:YES];
 }
 -(void)getUserName:(NSString *)userName{
     userNameString=userName;

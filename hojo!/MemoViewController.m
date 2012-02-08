@@ -14,6 +14,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
 
 @implementation MemoViewController
 @synthesize recordButton,playButton,stopButton;
+@synthesize memoTextView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,7 +64,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     }
     
 }
-
+/*-(void)loadView{
+    [super loadView];
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    scroll.pagingEnabled=YES;
+    scroll.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height*2);
+    [self.view addSubview:scroll];
+}*/
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -200,9 +207,10 @@ const unsigned char SpeechKitApplicationKey[] = {0x8c, 0x19, 0x46, 0x0a, 0x51, 0
     [attachFile setTitle:@"添付ファイルを表示" forState:UIControlStateNormal];
     UIImage *img = [[UIImage alloc] initWithContentsOfFile:pngFilePath];
     imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    imageButton.frame = CGRectMake(10, 150, 300, 200);
+    imageButton.frame = CGRectMake(10, 150, 280, 140);
     [imageButton setImage:img forState:UIControlStateNormal];
-    [self.view addSubview:imageButton];
+    //[self.view addSubview:imageButton];
+    [self.memoTextView addSubview:imageButton];
     [imageButton addTarget:self action:@selector(viewAttachment:) forControlEvents:UIControlEventTouchUpInside];
     /*UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 150, 300, 200)];
     //NSString *imgFilepath = [[NSBundle mainBundle] pathForResource:@"brick" ofType:@"png"];

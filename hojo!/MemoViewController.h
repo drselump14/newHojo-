@@ -31,6 +31,7 @@
     SKRecognizer* recognizer;
     //SKVocalizer * vocalizer;
     MBProgressHUD *HUD;
+    IBOutlet UIScrollView *scroll;
     enum {
         TS_IDLE,
         TS_INITIAL,
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
 @property (nonatomic, retain) IBOutlet UIButton *recordButton;
 @property (nonatomic, retain) IBOutlet UIButton *stopButton;
+@property (nonatomic,retain) IBOutlet UITextView *memoTextView;
 -(IBAction)recordAudio;
 -(IBAction)playAudio;
 -(IBAction)stop;

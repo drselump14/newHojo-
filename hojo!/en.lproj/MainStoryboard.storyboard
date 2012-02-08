@@ -254,52 +254,54 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メモ" id="qp5-5N-28R">
-                                <rect key="frame" x="5" y="48" width="309" height="325"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" id="HYX-Kq-AWP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="324"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" playsSound="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LGz-L1-Fod">
-                                <rect key="frame" x="5" y="3" width="309" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <state key="normal" title="音声メモ">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="recordAudio" destination="inC-13-lYj" eventType="touchUpInside" id="fKE-9D-j2f"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="bKv-Zz-EUC">
-                                <rect key="frame" x="143" y="164" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メモ" id="LBc-uO-g8G">
+                                        <rect key="frame" x="10" y="10" width="301" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="SsJ-Wv-we2">
+                                <rect key="frame" x="-13" y="376" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="mhY-Tw-tBk"/>
+                                    <barButtonItem width="212" style="plain" systemItem="fixedSpace" id="eDt-7I-Fxw"/>
+                                    <barButtonItem title="音声" id="xoS-iw-qH2"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="hGd-6k-tWW">
+                                <rect key="frame" x="0.0" y="323" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="Qkg-I0-xqn">
+                                        <connections>
+                                            <action selector="showActionSheet:" destination="inC-13-lYj" id="uJV-au-3sP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="210" style="plain" systemItem="fixedSpace" id="mEN-4J-7On"/>
+                                    <barButtonItem title="音声" id="Udq-2e-tYs">
+                                        <connections>
+                                            <action selector="recordAudio" destination="inC-13-lYj" id="EGG-lM-8WG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="メモ" id="Wp6-4q-ecM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="tQ3-PQ-Ia6">
-                            <connections>
-                                <action selector="showActionSheet:" destination="inC-13-lYj" id="qck-zf-ue6"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" style="done" id="PZg-oe-fBc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="memoTextView" destination="qp5-5N-28R" id="IMj-dn-xty"/>
-                        <outlet property="recordActivity" destination="bKv-Zz-EUC" id="NLp-jK-Fmy"/>
-                        <outlet property="recordButton" destination="LGz-L1-Fod" id="oJg-ul-poC"/>
+                        <outlet property="memoTextView" destination="LBc-uO-g8G" id="enm-ZZ-WJW"/>
+                        <outlet property="scroll" destination="HYX-Kq-AWP" id="Drt-Oq-qwa"/>
                     </connections>
                 </viewController>
             </objects>
@@ -423,6 +425,73 @@
         <image name="pencilangled.png" width="26" height="26"/>
         <image name="world.png" width="26" height="26"/>
     </resources>
+    <classes>
+        <class className="DiaryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiaryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mySwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DiaryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="AddTable:"/>
+                <relationship kind="action" name="EditTable:"/>
+                <relationship kind="action" name="SubmitTable:"/>
+            </relationships>
+        </class>
+        <class className="MemberPickerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemberPickerViewController.h"/>
+        </class>
+        <class className="MemoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MemoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouched:"/>
+                <relationship kind="action" name="pictureFromLibrary"/>
+                <relationship kind="action" name="playAudio"/>
+                <relationship kind="action" name="recordAudio"/>
+                <relationship kind="action" name="showActionSheet:"/>
+                <relationship kind="action" name="stop"/>
+                <relationship kind="action" name="takePicture"/>
+                <relationship kind="action" name="textFieldReturn:"/>
+                <relationship kind="action" name="viewAttachment:"/>
+                <relationship kind="outlet" name="attachFile" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fotoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="memoTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recordActivity" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scroll" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="WorkInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addTodayMember:"/>
+                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="conditionImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="conditionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="conditionsImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="currentTempLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="highTempLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="humidityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lowTempLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="memberTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
