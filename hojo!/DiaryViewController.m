@@ -5,6 +5,7 @@
 //  Created by slamet kristanto on 1/12/12.
 //  Copyright (c) 2012 香川高専高松キャンパス. All rights reserved.
 //
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
 #import "DiaryViewController.h"
 #import "Player.h"
@@ -12,7 +13,6 @@
 #import "MemberPickerViewController.h"
 #import "EditViewController.h"
 #import "AddDiaryViewController.h"
-#import "SBJson.h"
 #import "LoginViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
@@ -22,7 +22,7 @@
 
 @synthesize players;
 @synthesize editViewController;
-@synthesize responseData;
+//@synthesize responseData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,23 +42,16 @@
 }
 
 #pragma mark - View lifecycle
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    [responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	self.responseData = nil;
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-	self.responseData = nil;
+- (void)fetchedData:(NSData *)responseData {
+    NSError* error;
+    
 	NSLog(@"JSONsuccess");
-	NSArray* latestLoans = (NSArray*)[responseString JSONValue] ;
+	//NSArray* latestLoans = (NSArray*)[responseString JSONValue] ;
+    NSArray* latestLoans=[NSJSONSerialization 
+                          JSONObjectWithData:responseData //1
+                          
+                          options:kNilOptions 
+                          error:&error];   
     int i;
     for (i=0; i<[latestLoans count]; i++) {
         NSString *workNameJSON=[[latestLoans objectAtIndex:i]objectForKey:@"workname"];
@@ -68,13 +61,13 @@
         NSString *startTime2=[[latestLoans objectAtIndex:i]objectForKey:@"time12"];
         NSString *finishTime1=[[latestLoans objectAtIndex:i]objectForKey:@"time21"];
         NSString *finishTime2=[[latestLoans objectAtIndex:i]objectForKey:@"tiem22"];
-       // NSLog(@"%@",workNameJSON);
+        // NSLog(@"%@",workNameJSON);
         //choose a random loan
         if ([startTime1 integerValue]<10) startTime1=[NSString stringWithFormat:@"0%@",startTime1];
         if([startTime2 integerValue]<10)startTime2=[NSString stringWithFormat:@"0%@",startTime2];
         if([finishTime1 integerValue]<10)finishTime1=[NSString stringWithFormat:@"0%@",finishTime1];
         if([finishTime2 integerValue]<10)finishTime2=[NSString stringWithFormat:@"0%@",finishTime2];
-            
+        
         Player *player =[[Player alloc] init];
         player.workName=workNameJSON;
         player.crop=crop;
@@ -95,7 +88,6 @@
     }
     
     [HUD hide:YES];
-    //fetch the data
 }
 - (void)viewDidLoad
 {
@@ -111,7 +103,7 @@
     [[NSURLConnection alloc] initWithRequest:request delegate:self];*/
     badgeNumber=[players count];
     players =[NSMutableArray arrayWithCapacity:20];
-    self.responseData = [NSMutableData data];
+    //self.responseData = [NSMutableData data];
             
     //selectedIndex = [member indexOfObject:self.member];
 
@@ -133,10 +125,6 @@
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-   
-    /*UIAlertView *loginAlert=[[UIAlertView alloc]initWithTitle:@"ユーザーネムとパスワードを入れてください" message:nil delegate:self cancelButtonTitle:@"キャンセル" otherButtonTitles:@"ログイン", nil];
-    loginAlert.alertViewStyle=UIAlertViewStyleLoginAndPasswordInput;
-    [loginAlert show];*/
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -451,10 +439,14 @@
 }
 -(void)getUser:(NSString *)user{
     NSLog(@"%@",user);
-    self.responseData=[NSMutableData data];
+    //self.responseData=[NSMutableData data];
     NSString *urlString=[[NSString alloc]initWithFormat:@"http://210.137.228.50/workers/%@/onedays.json",user];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: 
+                        [NSURL URLWithString:urlString]];
+        [self performSelectorOnMainThread:@selector(fetchedData:) 
+                               withObject:data waitUntilDone:YES];
+    });
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
 	[self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
