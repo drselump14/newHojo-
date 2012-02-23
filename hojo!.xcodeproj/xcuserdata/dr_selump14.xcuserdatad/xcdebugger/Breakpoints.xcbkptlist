@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "hojo!/EditViewController.m"
-         timestampString = "349186409.121132"
+         timestampString = "350450561.973308"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "343"
-         endingLineNumber = "343">
+         startingLineNumber = "344"
+         endingLineNumber = "344">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
