@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 #import "EditViewController.h"
-#import "SBJson.h"
 #import "MBProgressHUD.h"
 
 @protocol DiaryViewDelegate <NSObject>
@@ -25,13 +24,13 @@
     NSMutableArray *players;
     EditViewController *editViewController;
     int badgeNumber;
-    NSMutableData *responseData;
+    //NSMutableData *responseData;
     NSString *userNameString;
     MBProgressHUD *HUD;
 }
 
 @property (nonatomic, strong) NSMutableArray *players;
-@property (nonatomic, retain) NSMutableData *responseData;
+//@property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic,retain) EditViewController *editViewController;
 
 -(IBAction)EditTable:(id)sender;
